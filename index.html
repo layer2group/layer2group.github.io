@@ -1,40 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="layer2group">
-    <meta name="description" content="Layer2 Group are researching layer2 solution for scalability for ethereum blockchain">
-    <meta name="keywords" content="Layer2, ethereum, layer2group, plasma, zkrollup, zk-rollup, optimism, offchain labs, fuel network, loopring, starkware, starkdex, matterlabs, zksync, aztec, omisego, gazelle, leapdao, connext, raiden, perun">
+    <meta name="description"
+        content="Layer2 Group are researching layer2 solution for scalability for ethereum blockchain">
+    <meta name="keywords"
+        content="Layer2, ethereum, layer2group, plasma, zkrollup, zk-rollup, optimism, offchain labs, fuel network, loopring, starkware, starkdex, matterlabs, zksync, aztec, omisego, gazelle, leapdao, connext, raiden, perun">
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-D9XWM8FPBG"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-    gtag('config', 'G-D9XWM8FPBG');
+        gtag('config', 'G-D9XWM8FPBG');
     </script>
 
     <link rel="icon" href="/assets/icons/l2.png">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
-    <script src="/assets/js/chartjs-plugin-watermark-master/chartjs-plugin-watermark-master/chartjs-plugin-watermark.js"></script>
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css">
 
-    
+
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-    
-    <title>Layer2 Group</title>    
-    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+    <title>Layer2 Group</title>
+
 </head>
+
 <body class="bg-light">
     <nav class="navbar navbar-expand-lg navbar-light bg-light pb-5">
         <div class="container">
             <a class="navbar-brand" href="/index.html"><img src="/assets/icons/l2.png" style="max-width:50px"></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarResponsive">
@@ -59,23 +64,23 @@
     <!-- Total Valued Transferred onto Layer2 -->
     <div class="container shadow rounded p-3 mb-5 bg-white">
         <div class="col-md-12">
-            <canvas id="tvt"></canvas>
+            <div id="tvl2_sum" style="height: 400px; min-width: 310px"></div>
         </div>
     </div>
 
     <div class="container shadow rounded p-3 mb-5 bg-white">
         <div class="row">
             <div class="col-md-6">
-                <canvas id="tvt_LoopringV2_ETH"></canvas>
+                <div id="tvl2_loopring" style="height: 400px; min-width: 310px"></div>
             </div>
             <div class="col-md-6">
-                <canvas id="tvt_LoopringV2_LRC"></canvas>
+                <div id="tvl2_synthetix" style="height: 400px; min-width: 310px"></div>
             </div>
             <div class="col-md-6">
-                <canvas id="tvt_LoopringV1_ETH"></canvas>
+                <div id="tvl2_deversifi" style="height: 400px; min-width: 310px"></div>
             </div>
             <div class="col-md-6">
-                <canvas id="synthetixtvt"></canvas>
+                <div id="tvl2_nash" style="height: 400px; min-width: 310px"></div>
             </div>
         </div>
     </div>
@@ -84,85 +89,41 @@
     <!-- Tx Volume Chart -->
     <div class="container shadow rounded p-3 mb-5 bg-white">
         <div class="col-md-12">
-            <canvas id="dataTransactionVolume"></canvas>
+            <div id="dex_sum" style="height: 400px; min-width: 310px"></div>
         </div>
     </div>
 
     <div class="container shadow rounded p-3 mb-5 bg-white">
         <div class="row">
             <div class="col-md-6">
-                <canvas id="loopringTxVolume"></canvas>
+                <div id="dex_loopring_amm" style="height: 400px; min-width: 310px"></div>
             </div>
             <div class="col-md-6">
-                <canvas id="nashTxVolume"></canvas>
+                <div id="dex_loopring" style="height: 400px; min-width: 310px"></div>
             </div>
             <div class="col-md-6">
-                <canvas id="deversifiTxVolume"></canvas>
+                <div id="dex_deversifi" style="height: 400px; min-width: 310px"></div>
             </div>
             <div class="col-md-6">
-                <canvas id="idexTxVolume"></canvas>
+                <div id="dex_nash" style="height: 400px; min-width: 310px"></div>
+            </div>
+            <div class="col-md-6">
+                <div id="dex_idex" style="height: 400px; min-width: 310px"></div>
+            </div>
+            <div class="col-md-6">
+                <div id="dex_leverj" style="height: 400px; min-width: 310px"></div>
             </div>
         </div>
     </div>
 
-    <!-- Comparison table(none) -->
 
-    <div class="bg-light" style="display: none;">
-        <div class="container shadow rounded p-3 mb-5 bg-white">
-            <h2 class="p-3">
-                <p class="pb-2">Comparison</p>
-                <table class="table font-weight-lighter" style="font-size: 15px; ">
-                    <thead>
-                        <tr>
-                          <th scope="col">Project</th>
-                          <th scope="col">Security</th>
-                          <th scope="col">Privacy</th>
-                          <th scope="col">Public Participation</th>
-                          <th scope="col">Validation</th>
-                          <th scope="col">Cost</th>
-                          <th scope="col">Finality</th>
-                          <th scope="col">TPS</th>
-                          <th scope="col">Tx Cost</th>
-                          <th scope="col">Lockup</th>
-                          <th scope="col">Collaborate</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <th scope="row">Optimism</th>
-                          <td>Mark</td>
-                          <td>Otto</td>
-                          <td>@mdo</td>
-                          <td>Synthetix, Unipig</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">Loopring</th>
-                          <td>Jacob</td>
-                          <td>Thornton</td>
-                          <td>@fat</td>
-                          <td>@mdo</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">Loom Network</th>
-                          <td>Larry</td>
-                          <td>the Bird</td>
-                          <td>@twitter</td>
-                          <td>@mdo</td>
-                        </tr>
-                      </tbody>
-                </table>
-            </h2>
-        </div>
-    </div>
-
-    
 
     <footer>
         <div class="container">
             <hr class="mb-4">
             <div class="row align-item-center">
                 <div class="col-md-7 col-lg-8">
-                    <p>Researching layer2 solution for scalability for ethereum blockchain : 
+                    <p>Researching layer2 solution for scalability for ethereum blockchain :
                         <a href="/index.html" style="text-decoration: none;">
                             <strong style="color: black;">Layer2 Group</strong>
                         </a>
@@ -173,10 +134,12 @@
                     <div class="text-center text-md-right">
                         <ul class="list-unstyled list-inline">
                             <li class="list-inline-item">
-                                <a href="https://twitter.com/Layer2G" target="_blank" class="btn-floating btn-sm" style="font-size: 20px; color: black;"><i class="fab fa-twitter"></i></a>
+                                <a href="https://twitter.com/Layer2G" target="_blank" class="btn-floating btn-sm"
+                                    style="font-size: 20px; color: black;"><i class="fab fa-twitter"></i></a>
                             </li>
                             <li class="list-inline-item">
-                                <a href="https://t.me/Layer2_Group" target="_blank" class="btn-floating btn-sm" style="font-size: 20px; color: black;"><i class="fab fa-telegram"></i></a>
+                                <a href="https://t.me/Layer2_Group" target="_blank" class="btn-floating btn-sm"
+                                    style="font-size: 20px; color: black;"><i class="fab fa-telegram"></i></a>
                             </li>
                         </ul>
                     </div>
@@ -186,912 +149,742 @@
     </footer>
 
 
-
-
-    <!-- Optional JavaScript; choose one of the two! -->
-
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
 
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
-    -->
+
+    <!--Highcharts Source from https://www.highcharts.com/ -->
+    <script src="https://code.highcharts.com/stock/highstock.js"></script>
+    <script src="https://code.highcharts.com/stock/modules/data.js"></script>
+    <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/stock/modules/export-data.js"></script>
 
     <script>
-        let tvt = document.getElementById('tvt').getContext('2d');
-        let tvt_LoopringV2_ETH = document.getElementById('tvt_LoopringV2_ETH').getContext('2d');
-        let tvt_LoopringV2_LRC = document.getElementById('tvt_LoopringV2_LRC').getContext('2d');
-        let tvt_LoopringV1_ETH = document.getElementById('tvt_LoopringV1_ETH').getContext('2d');
-        let synthetixtvt = document.getElementById('synthetixtvt').getContext('2d');
+        //TVL2//
+        Highcharts.getJSON('sum.json', function (data) {
+            // Create the chart
+            Highcharts.setOptions({
+                lang: {
+                    thousandsSep: ','
+                }
+            })
+
+            Highcharts.stockChart('tvl2_sum', {
+                scrollbar:{
+                    enabled: false //bottom scrollbar
+                },
+                navigator: {
+                    enabled: false //bottom navigator
+                },
+                exporting: {
+                    enabled: false //top right exporting menu
+                },
+
+                rangeSelector: {
+                    buttons:[{
+                        type: 'month',
+                        count: 1,
+                        text: '1m',
+                        title: 'View 1 months'
+                    },{
+                        type: 'month',
+                        count: 3,
+                        text: '3m',
+                        title: 'View 3 months'
+                    },{
+                        type: 'month',
+                        count: 6,
+                        text: '6m',
+                        title: 'View 6 months'
+                    },{
+                        type: 'all',
+                        text: 'All',
+                        title: 'View all'
+                    }],
+                    selected: 1,
+                    inputEnabled: false // Edit Period
+                },
+                title: {
+                    text: 'Total Value Locked for Layer2(TVL2)'
+                },
+                tooltip:{
+                    valueDecimals: 0,
+                    valuePrefix: '$',
+                },
+                series: [{
+                    name: 'TVL2',
+                    data: data
+
+                }]
+            
+            });
+        });
 
 
-        let dataTransactionVolume = document.getElementById('dataTransactionVolume').getContext('2d');
-        let loopringTxVolume = document.getElementById('loopringTxVolume').getContext('2d');
-        let nashTxVolume = document.getElementById('nashTxVolume').getContext('2d');
-        let deversifiTxVolume = document.getElementById('deversifiTxVolume').getContext('2d');
-        let idexTxVolume = document.getElementById('idexTxVolume').getContext('2d');
+        Highcharts.getJSON('loopring.json', function (data) {
+            // Create the chart
+            Highcharts.setOptions({
+                lang: {
+                    thousandsSep: ','
+                }
+            })
+
+            Highcharts.stockChart('tvl2_loopring', {
+                scrollbar:{
+                    enabled: false //bottom scrollbar
+                },
+                navigator: {
+                    enabled: false //bottom navigator
+                },
+                exporting: {
+                    enabled: false //top right exporting menu
+                },
+
+                rangeSelector: {
+                    buttons:[{
+                        type: 'month',
+                        count: 1,
+                        text: '1m',
+                        title: 'View 1 months'
+                    },{
+                        type: 'month',
+                        count: 3,
+                        text: '3m',
+                        title: 'View 3 months'
+                    },{
+                        type: 'month',
+                        count: 6,
+                        text: '6m',
+                        title: 'View 6 months'
+                    },{
+                        type: 'all',
+                        text: 'All',
+                        title: 'View all'
+                    }],
+                    selected: 1,
+                    inputEnabled: false // Edit Period
+                },
+                title: {
+                    text: 'TVL2 on Loopring'
+                },
+                tooltip:{
+                    valueDecimals: 0,
+                    valuePrefix: '$',
+                },
+                series: [{
+                    name: 'TVL2',
+                    data: data
+
+                }]
+            
+            });
+        });
+
+
+        Highcharts.getJSON('synthetix.json', function (data) {
+            // Create the chart
+            Highcharts.setOptions({
+                lang: {
+                    thousandsSep: ','
+                }
+            })
+
+            Highcharts.stockChart('tvl2_synthetix', {
+                scrollbar:{
+                    enabled: false //bottom scrollbar
+                },
+                navigator: {
+                    enabled: false //bottom navigator
+                },
+                exporting: {
+                    enabled: false //top right exporting menu
+                },
+
+                rangeSelector: {
+                    buttons:[{
+                        type: 'month',
+                        count: 1,
+                        text: '1m',
+                        title: 'View 1 months'
+                    },{
+                        type: 'month',
+                        count: 3,
+                        text: '3m',
+                        title: 'View 3 months'
+                    },{
+                        type: 'month',
+                        count: 6,
+                        text: '6m',
+                        title: 'View 6 months'
+                    },{
+                        type: 'all',
+                        text: 'All',
+                        title: 'View all'
+                    }],
+                    selected: 1,
+                    inputEnabled: false // Edit Period
+                },
+                title: {
+                    text: 'TVL2 on Synthetix'
+                },
+                tooltip:{
+                    valueDecimals: 0,
+                    valuePrefix: '$',
+                },
+                series: [{
+                    name: 'TVL2',
+                    data: data
+
+                }]
+            
+            });
+        });
+
+
+        Highcharts.getJSON('deversifi.json', function (data) {
+            // Create the chart
+            Highcharts.setOptions({
+                lang: {
+                    thousandsSep: ','
+                }
+            })
+
+            Highcharts.stockChart('tvl2_deversifi', {
+                scrollbar:{
+                    enabled: false //bottom scrollbar
+                },
+                navigator: {
+                    enabled: false //bottom navigator
+                },
+                exporting: {
+                    enabled: false //top right exporting menu
+                },
+
+                rangeSelector: {
+                    buttons:[{
+                        type: 'month',
+                        count: 1,
+                        text: '1m',
+                        title: 'View 1 months'
+                    },{
+                        type: 'month',
+                        count: 3,
+                        text: '3m',
+                        title: 'View 3 months'
+                    },{
+                        type: 'month',
+                        count: 6,
+                        text: '6m',
+                        title: 'View 6 months'
+                    },{
+                        type: 'all',
+                        text: 'All',
+                        title: 'View all'
+                    }],
+                    selected: 1,
+                    inputEnabled: false // Edit Period
+                },
+                title: {
+                    text: 'TVL2 on Deversifi'
+                },
+                tooltip:{
+                    valueDecimals: 0,
+                    valuePrefix: '$',
+                },
+                series: [{
+                    name: 'TVL2',
+                    data: data
+
+                }]
+            
+            });
+        });
+
+        Highcharts.getJSON('nash.json', function (data) {
+            // Create the chart
+            Highcharts.setOptions({
+                lang: {
+                    thousandsSep: ','
+                }
+            })
+
+            Highcharts.stockChart('tvl2_nash', {
+                scrollbar:{
+                    enabled: false //bottom scrollbar
+                },
+                navigator: {
+                    enabled: false //bottom navigator
+                },
+                exporting: {
+                    enabled: false //top right exporting menu
+                },
+
+                rangeSelector: {
+                    buttons:[{
+                        type: 'month',
+                        count: 1,
+                        text: '1m',
+                        title: 'View 1 months'
+                    },{
+                        type: 'month',
+                        count: 3,
+                        text: '3m',
+                        title: 'View 3 months'
+                    },{
+                        type: 'month',
+                        count: 6,
+                        text: '6m',
+                        title: 'View 6 months'
+                    },{
+                        type: 'all',
+                        text: 'All',
+                        title: 'View all'
+                    }],
+                    selected: 1,
+                    inputEnabled: false // Edit Period
+                },
+                title: {
+                    text: 'TVL2 on Nash'
+                },
+                tooltip:{
+                    valueDecimals: 0,
+                    valuePrefix: '$',
+                },
+                series: [{
+                    name: 'TVL2',
+                    data: data
+                }]
+            
+            });
+        });
 
         
-        let dateSettvt = ['2020-02-20', '2020-02-21', '2020-02-22', '2020-02-23', '2020-02-24', '2020-02-25', '2020-02-26', '2020-02-27', '2020-02-28', '2020-02-29', '2020-03-01', '2020-03-02', '2020-03-03', '2020-03-04', '2020-03-05', '2020-03-06', '2020-03-07', '2020-03-08', '2020-03-09', '2020-03-10', '2020-03-11', '2020-03-12', '2020-03-13', '2020-03-14', '2020-03-15', '2020-03-16', '2020-03-17', '2020-03-18', '2020-03-19', '2020-03-20', '2020-03-21', '2020-03-22', '2020-03-23', '2020-03-24', '2020-03-25', '2020-03-26', '2020-03-27', '2020-03-28', '2020-03-29', '2020-03-30', '2020-03-31', '2020-04-01', '2020-04-02', '2020-04-03', '2020-04-04', '2020-04-05', '2020-04-06', '2020-04-07', '2020-04-08', '2020-04-09', '2020-04-10', '2020-04-11', '2020-04-12', '2020-04-13', '2020-04-14', '2020-04-15', '2020-04-16', '2020-04-17', '2020-04-18', '2020-04-19', '2020-04-20', '2020-04-21', '2020-04-22', '2020-04-23', '2020-04-24', '2020-04-25', '2020-04-26', '2020-04-27', '2020-04-28', '2020-04-29', '2020-04-30', '2020-05-01', '2020-05-02', '2020-05-03', '2020-05-04', '2020-05-05', '2020-05-06', '2020-05-07', '2020-05-08', '2020-05-09', '2020-05-10', '2020-05-11', '2020-05-12', '2020-05-13', '2020-05-14', '2020-05-15', '2020-05-16', '2020-05-17', '2020-05-18', '2020-05-19', '2020-05-20', '2020-05-21', '2020-05-22', '2020-05-23', '2020-05-24', '2020-05-25', '2020-05-26', '2020-05-27', '2020-05-28', '2020-05-29', '2020-05-30', '2020-05-31', '2020-06-01', '2020-06-02', '2020-06-03', '2020-06-04', '2020-06-05', '2020-06-06', '2020-06-07', '2020-06-08', '2020-06-09', '2020-06-10', '2020-06-11', '2020-06-12', '2020-06-13', '2020-06-14', '2020-06-15', '2020-06-16', '2020-06-17', '2020-06-18', '2020-06-19', '2020-06-20', '2020-06-21', '2020-06-22', '2020-06-23', '2020-06-24', '2020-06-25', '2020-06-26', '2020-06-27', '2020-06-28', '2020-06-29', '2020-06-30', '2020-07-01', '2020-07-02', '2020-07-03', '2020-07-04', '2020-07-05', '2020-07-06', '2020-07-07', '2020-07-08', '2020-07-09', '2020-07-10', '2020-07-11', '2020-07-12', '2020-07-13', '2020-07-14', '2020-07-15', '2020-07-16', '2020-07-17', '2020-07-18', '2020-07-19', '2020-07-20', '2020-07-21', '2020-07-22', '2020-07-23', '2020-07-24', '2020-07-25', '2020-07-26', '2020-07-27', '2020-07-28', '2020-07-29', '2020-07-30', '2020-07-31', '2020-08-01', '2020-08-02', '2020-08-03', '2020-08-04', '2020-08-05', '2020-08-06', '2020-08-07', '2020-08-08', '2020-08-09', '2020-08-10', '2020-08-11', '2020-08-12', '2020-08-13', '2020-08-14', '2020-08-15', '2020-08-16', '2020-08-17', '2020-08-18', '2020-08-19', '2020-08-20', '2020-08-21', '2020-08-22', '2020-08-23', '2020-08-24', '2020-08-25', '2020-08-26', '2020-08-27', '2020-08-28', '2020-08-29', '2020-08-30', '2020-08-31', '2020-09-01', '2020-09-02', '2020-09-03', '2020-09-04', '2020-09-05', '2020-09-06', '2020-09-07', '2020-09-08', '2020-09-09', '2020-09-10', '2020-09-11', '2020-09-12', '2020-09-13', '2020-09-14', '2020-09-15', '2020-09-16', '2020-09-17', '2020-09-18', '2020-09-19', '2020-09-20', '2020-09-21', '2020-09-22', '2020-09-23', '2020-09-24', '2020-09-25', '2020-09-26', '2020-09-27', '2020-09-28', '2020-09-29', '2020-09-30', '2020-10-01', '2020-10-02', '2020-10-03', '2020-10-04', '2020-10-05', '2020-10-06', '2020-10-07', '2020-10-08', '2020-10-09', '2020-10-10', '2020-10-11', '2020-10-12', '2020-10-13', '2020-10-14', '2020-10-15', '2020-10-16', '2020-10-17', '2020-10-18', '2020-10-19', '2020-10-20', '2020-10-21', '2020-10-22', '2020-10-23', '2020-10-24', '2020-10-25', '2020-10-26', '2020-10-27', '2020-10-28', '2020-10-29', '2020-10-30', '2020-10-31', '2020-11-01', '2020-11-02', '2020-11-03', '2020-11-04', '2020-11-05', '2020-11-06', '2020-11-07', '2020-11-08', '2020-11-09', '2020-11-10', '2020-11-11', '2020-11-12', '2020-11-13', '2020-11-14', '2020-11-15', '2020-11-16', '2020-11-17', '2020-11-18', '2020-11-19', '2020-11-20', '2020-11-21', '2020-11-22', '2020-11-23', '2020-11-24', '2020-11-25', '2020-11-26', '2020-11-27', '2020-11-28', '2020-11-29', '2020-11-30', '2020-12-01', '2020-12-02', '2020-12-03', '2020-12-04', '2020-12-05', '2020-12-06', '2020-12-07', '2020-12-08', '2020-12-09', '2020-12-10', '2020-12-11', '2020-12-12', '2020-12-13', '2020-12-14', '2020-12-15', '2020-12-16', '2020-12-17', '2020-12-18', '2020-12-19', '2020-12-20', '2020-12-21', '2020-12-22', '2020-12-23', '2020-12-24', '2020-12-25', '2020-12-26', '2020-12-27', '2020-12-28', '2020-12-29', '2020-12-30', '2020-12-31', '2021-01-01', '2021-01-02', '2021-01-03', '2021-01-04', '2021-01-05', '2021-01-06', '2021-01-07', '2021-01-08', '2021-01-09', '2021-01-10', '2021-01-11', '2021-01-12', '2021-01-13', '2021-01-14', '2021-01-15', '2021-01-16', '2021-01-17', '2021-01-18', '2021-01-19', '2021-01-20', '2021-01-21', '2021-01-22', '2021-01-23', '2021-01-24', '2021-01-25', '2021-01-26', '2021-01-27', '2021-01-28', '2021-01-29', '2021-01-30', '2021-01-31', '2021-02-01', '2021-02-02', '2021-02-03'];
-
-        let dateSettvt_LoopringV2_ETH = ['2020-11-26', '2020-11-27', '2020-11-28', '2020-11-29', '2020-11-30', '2020-12-01', '2020-12-02', '2020-12-03', '2020-12-04', '2020-12-05', '2020-12-06', '2020-12-07', '2020-12-08', '2020-12-09', '2020-12-10', '2020-12-11', '2020-12-12', '2020-12-13', '2020-12-14', '2020-12-15', '2020-12-16', '2020-12-17', '2020-12-18', '2020-12-19', '2020-12-20', '2020-12-21', '2020-12-22', '2020-12-23', '2020-12-24', '2020-12-25', '2020-12-26', '2020-12-27', '2020-12-28', '2020-12-29', '2020-12-30', '2020-12-31', '2021-01-01', '2021-01-02', '2021-01-03', '2021-01-04', '2021-01-05', '2021-01-06', '2021-01-07', '2021-01-08', '2021-01-09', '2021-01-10', '2021-01-11', '2021-01-12', '2021-01-13', '2021-01-14', '2021-01-15', '2021-01-16', '2021-01-17', '2021-01-18', '2021-01-19', '2021-01-20', '2021-01-21', '2021-01-22', '2021-01-23', '2021-01-24', '2021-01-25', '2021-01-26', '2021-01-27', '2021-01-28', '2021-01-29', '2021-01-30', '2021-01-31', '2021-02-01', '2021-02-02', '2021-02-03'];
-
-        let dateSettvt_LoopringV2_LRC = ['2020-11-26', '2020-11-27', '2020-11-28', '2020-11-29', '2020-11-30', '2020-12-01', '2020-12-02', '2020-12-03', '2020-12-04', '2020-12-05', '2020-12-06', '2020-12-07', '2020-12-08', '2020-12-09', '2020-12-10', '2020-12-11', '2020-12-12', '2020-12-13', '2020-12-14', '2020-12-15', '2020-12-16', '2020-12-17', '2020-12-18', '2020-12-19', '2020-12-20', '2020-12-21', '2020-12-22', '2020-12-23', '2020-12-24', '2020-12-25', '2020-12-26', '2020-12-27', '2020-12-28', '2020-12-29', '2020-12-30', '2020-12-31', '2021-01-01', '2021-01-02', '2021-01-03', '2021-01-04', '2021-01-05', '2021-01-06', '2021-01-07', '2021-01-08', '2021-01-09', '2021-01-10', '2021-01-11', '2021-01-12', '2021-01-13', '2021-01-14', '2021-01-15', '2021-01-16', '2021-01-17', '2021-01-18', '2021-01-19', '2021-01-20', '2021-01-21', '2021-01-22', '2021-01-23', '2021-01-24', '2021-01-25', '2021-01-26', '2021-01-27', '2021-01-28', '2021-01-29', '2021-01-30', '2021-01-31', '2021-02-01', '2021-02-02', '2021-02-03'];
-
-        let dateSettvt_LoopringV1_ETH = ['2020-02-20', '2020-02-21', '2020-02-22', '2020-02-23', '2020-02-24', '2020-02-25', '2020-02-26', '2020-02-27', '2020-02-28', '2020-02-29', '2020-03-01', '2020-03-02', '2020-03-03', '2020-03-04', '2020-03-05', '2020-03-06', '2020-03-07', '2020-03-08', '2020-03-09', '2020-03-10', '2020-03-11', '2020-03-12', '2020-03-13', '2020-03-14', '2020-03-15', '2020-03-16', '2020-03-17', '2020-03-18', '2020-03-19', '2020-03-20', '2020-03-21', '2020-03-22', '2020-03-23', '2020-03-24', '2020-03-25', '2020-03-26', '2020-03-27', '2020-03-28', '2020-03-29', '2020-03-30', '2020-03-31', '2020-04-01', '2020-04-02', '2020-04-03', '2020-04-04', '2020-04-05', '2020-04-06', '2020-04-07', '2020-04-08', '2020-04-09', '2020-04-10', '2020-04-11', '2020-04-12', '2020-04-13', '2020-04-14', '2020-04-15', '2020-04-16', '2020-04-17', '2020-04-18', '2020-04-19', '2020-04-20', '2020-04-21', '2020-04-22', '2020-04-23', '2020-04-24', '2020-04-25', '2020-04-26', '2020-04-27', '2020-04-28', '2020-04-29', '2020-04-30', '2020-05-01', '2020-05-02', '2020-05-03', '2020-05-04', '2020-05-05', '2020-05-06', '2020-05-07', '2020-05-08', '2020-05-09', '2020-05-10', '2020-05-11', '2020-05-12', '2020-05-13', '2020-05-14', '2020-05-15', '2020-05-16', '2020-05-17', '2020-05-18', '2020-05-19', '2020-05-20', '2020-05-21', '2020-05-22', '2020-05-23', '2020-05-24', '2020-05-25', '2020-05-26', '2020-05-27', '2020-05-28', '2020-05-29', '2020-05-30', '2020-05-31', '2020-06-01', '2020-06-02', '2020-06-03', '2020-06-04', '2020-06-05', '2020-06-06', '2020-06-07', '2020-06-08', '2020-06-09', '2020-06-10', '2020-06-11', '2020-06-12', '2020-06-13', '2020-06-14', '2020-06-15', '2020-06-16', '2020-06-17', '2020-06-18', '2020-06-19', '2020-06-20', '2020-06-21', '2020-06-22', '2020-06-23', '2020-06-24', '2020-06-25', '2020-06-26', '2020-06-27', '2020-06-28', '2020-06-29', '2020-06-30', '2020-07-01', '2020-07-02', '2020-07-03', '2020-07-04', '2020-07-05', '2020-07-06', '2020-07-07', '2020-07-08', '2020-07-09', '2020-07-10', '2020-07-11', '2020-07-12', '2020-07-13', '2020-07-14', '2020-07-15', '2020-07-16', '2020-07-17', '2020-07-18', '2020-07-19', '2020-07-20', '2020-07-21', '2020-07-22', '2020-07-23', '2020-07-24', '2020-07-25', '2020-07-26', '2020-07-27', '2020-07-28', '2020-07-29', '2020-07-30', '2020-07-31', '2020-08-01', '2020-08-02', '2020-08-03', '2020-08-04', '2020-08-05', '2020-08-06', '2020-08-07', '2020-08-08', '2020-08-09', '2020-08-10', '2020-08-11', '2020-08-12', '2020-08-13', '2020-08-14', '2020-08-15', '2020-08-16', '2020-08-17', '2020-08-18', '2020-08-19', '2020-08-20', '2020-08-21', '2020-08-22', '2020-08-23', '2020-08-24', '2020-08-25', '2020-08-26', '2020-08-27', '2020-08-28', '2020-08-29', '2020-08-30', '2020-08-31', '2020-09-01', '2020-09-02', '2020-09-03', '2020-09-04', '2020-09-05', '2020-09-06', '2020-09-07', '2020-09-08', '2020-09-09', '2020-09-10', '2020-09-11', '2020-09-12', '2020-09-13', '2020-09-14', '2020-09-15', '2020-09-16', '2020-09-17', '2020-09-18', '2020-09-19', '2020-09-20', '2020-09-21', '2020-09-22', '2020-09-23', '2020-09-24', '2020-09-25', '2020-09-26', '2020-09-27', '2020-09-28', '2020-09-29', '2020-09-30', '2020-10-01', '2020-10-02', '2020-10-03', '2020-10-04', '2020-10-05', '2020-10-06', '2020-10-07', '2020-10-08', '2020-10-09', '2020-10-10', '2020-10-11', '2020-10-12', '2020-10-13', '2020-10-14', '2020-10-15', '2020-10-16', '2020-10-17', '2020-10-18', '2020-10-19', '2020-10-20', '2020-10-21', '2020-10-22', '2020-10-23', '2020-10-24', '2020-10-25', '2020-10-26', '2020-10-27', '2020-10-28', '2020-10-29', '2020-10-30', '2020-10-31', '2020-11-01', '2020-11-02', '2020-11-03', '2020-11-04', '2020-11-05', '2020-11-06', '2020-11-07', '2020-11-08', '2020-11-09', '2020-11-10', '2020-11-11', '2020-11-12', '2020-11-13', '2020-11-14', '2020-11-15', '2020-11-16', '2020-11-17', '2020-11-18', '2020-11-19', '2020-11-20', '2020-11-21', '2020-11-22', '2020-11-23', '2020-11-24', '2020-11-25', '2020-11-26', '2020-11-27', '2020-11-28', '2020-11-29', '2020-11-30', '2020-12-01', '2020-12-02', '2020-12-03', '2020-12-04', '2020-12-05', '2020-12-06', '2020-12-07', '2020-12-08', '2020-12-09', '2020-12-10', '2020-12-11', '2020-12-12', '2020-12-13', '2020-12-14', '2020-12-15', '2020-12-16', '2020-12-17', '2020-12-18', '2020-12-19', '2020-12-20', '2020-12-21', '2020-12-22', '2020-12-23', '2020-12-24', '2020-12-25', '2020-12-26', '2020-12-27', '2020-12-28', '2020-12-29', '2020-12-30', '2020-12-31', '2021-01-01', '2021-01-02', '2021-01-03', '2021-01-04', '2021-01-05', '2021-01-06', '2021-01-07', '2021-01-08', '2021-01-09', '2021-01-10', '2021-01-11', '2021-01-12', '2021-01-13', '2021-01-14', '2021-01-15', '2021-01-16', '2021-01-17', '2021-01-18', '2021-01-19', '2021-01-20', '2021-01-21', '2021-01-22', '2021-01-23', '2021-01-24', '2021-01-25', '2021-01-26', '2021-01-27', '2021-01-28', '2021-01-29', '2021-01-30', '2021-01-31', '2021-02-01', '2021-02-02', '2021-02-03'];
-
-        let dateSettvt_synthetix = ['2021-01-15', '2021-01-16', '2021-01-17', '2021-01-18', '2021-01-19', '2021-01-20', '2021-01-21', '2021-01-22', '2021-01-23', '2021-01-24', '2021-01-25', '2021-01-26', '2021-01-27', '2021-01-28', '2021-01-29', '2021-01-30', '2021-01-31', '2021-02-01', '2021-02-02', '2021-02-03'];
-            
-
-        let dateSetTransactionVolume = ['2020-02-03', '2020-02-04', '2020-02-05', '2020-02-06', '2020-02-07', '2020-02-08', '2020-02-09', '2020-02-10', '2020-02-11', '2020-02-12', '2020-02-13', '2020-02-14', '2020-02-15', '2020-02-16', '2020-02-17', '2020-02-18', '2020-02-19', '2020-02-20', '2020-02-21', '2020-02-22', '2020-02-23', '2020-02-24', '2020-02-25', '2020-02-26', '2020-02-27', '2020-02-28', '2020-02-29', '2020-03-01', '2020-03-02', '2020-03-03', '2020-03-04', '2020-03-05', '2020-03-06', '2020-03-07', '2020-03-08', '2020-03-09', '2020-03-10', '2020-03-11', '2020-03-12', '2020-03-13', '2020-03-14', '2020-03-15', '2020-03-16', '2020-03-17', '2020-03-18', '2020-03-19', '2020-03-20', '2020-03-21', '2020-03-22', '2020-03-23', '2020-03-24', '2020-03-25', '2020-03-26', '2020-03-27', '2020-03-28', '2020-03-29', '2020-03-30', '2020-03-31', '2020-04-01', '2020-04-02', '2020-04-03', '2020-04-04', '2020-04-05', '2020-04-06', '2020-04-07', '2020-04-08', '2020-04-09', '2020-04-10', '2020-04-11', '2020-04-12', '2020-04-13', '2020-04-14', '2020-04-15', '2020-04-16', '2020-04-17', '2020-04-18', '2020-04-19', '2020-04-20', '2020-04-21', '2020-04-22', '2020-04-23', '2020-04-24', '2020-04-25', '2020-04-26', '2020-04-27', '2020-04-28', '2020-04-29', '2020-04-30', '2020-05-01', '2020-05-02', '2020-05-03', '2020-05-04', '2020-05-05', '2020-05-06', '2020-05-07', '2020-05-08', '2020-05-09', '2020-05-10', '2020-05-11', '2020-05-12', '2020-05-13', '2020-05-14', '2020-05-15', '2020-05-16', '2020-05-17', '2020-05-18', '2020-05-19', '2020-05-20', '2020-05-21', '2020-05-22', '2020-05-23', '2020-05-24', '2020-05-25', '2020-05-26', '2020-05-27', '2020-05-28', '2020-05-29', '2020-05-30', '2020-05-31', '2020-06-01', '2020-06-02', '2020-06-03', '2020-06-04', '2020-06-05', '2020-06-06', '2020-06-07', '2020-06-08', '2020-06-09', '2020-06-10', '2020-06-11', '2020-06-12', '2020-06-13', '2020-06-14', '2020-06-15', '2020-06-16', '2020-06-17', '2020-06-18', '2020-06-19', '2020-06-20', '2020-06-21', '2020-06-22', '2020-06-23', '2020-06-24', '2020-06-25', '2020-06-26', '2020-06-27', '2020-06-28', '2020-06-29', '2020-06-30', '2020-07-01', '2020-07-02', '2020-07-03', '2020-07-04', '2020-07-05', '2020-07-06', '2020-07-07', '2020-07-08', '2020-07-09', '2020-07-10', '2020-07-11', '2020-07-12', '2020-07-13', '2020-07-14', '2020-07-15', '2020-07-16', '2020-07-17', '2020-07-18', '2020-07-19', '2020-07-20', '2020-07-21', '2020-07-22', '2020-07-23', '2020-07-24', '2020-07-25', '2020-07-26', '2020-07-27', '2020-07-28', '2020-07-29', '2020-07-30', '2020-07-31', '2020-08-01', '2020-08-02', '2020-08-03', '2020-08-04', '2020-08-05', '2020-08-06', '2020-08-07', '2020-08-08', '2020-08-09', '2020-08-10', '2020-08-11', '2020-08-12', '2020-08-13', '2020-08-14', '2020-08-15', '2020-08-16', '2020-08-17', '2020-08-18', '2020-08-19', '2020-08-20', '2020-08-21', '2020-08-22', '2020-08-23', '2020-08-24', '2020-08-25', '2020-08-26', '2020-08-27', '2020-08-28', '2020-08-29', '2020-08-30', '2020-08-31', '2020-09-01', '2020-09-02', '2020-09-03', '2020-09-04', '2020-09-05', '2020-09-06', '2020-09-07', '2020-09-08', '2020-09-09', '2020-09-10', '2020-09-11', '2020-09-12', '2020-09-13', '2020-09-14', '2020-09-15', '2020-09-16', '2020-09-17', '2020-09-18', '2020-09-19', '2020-09-20', '2020-09-21', '2020-09-22', '2020-09-23', '2020-09-24', '2020-09-25', '2020-09-26', '2020-09-27', '2020-09-28', '2020-09-29', '2020-09-30', '2020-10-01', '2020-10-02', '2020-10-03', '2020-10-04', '2020-10-05', '2020-10-06', '2020-10-07', '2020-10-08', '2020-10-09', '2020-10-10', '2020-10-11', '2020-10-12', '2020-10-13', '2020-10-14', '2020-10-15', '2020-10-16', '2020-10-17', '2020-10-18', '2020-10-19', '2020-10-20', '2020-10-21', '2020-10-22', '2020-10-23', '2020-10-24', '2020-10-25', '2020-10-26', '2020-10-27', '2020-10-28', '2020-10-29', '2020-10-30', '2020-10-31', '2020-11-01', '2020-11-02', '2020-11-03', '2020-11-04', '2020-11-05', '2020-11-06', '2020-11-07', '2020-11-08', '2020-11-09', '2020-11-10', '2020-11-11', '2020-11-12', '2020-11-13', '2020-11-14', '2020-11-15', '2020-11-16', '2020-11-17', '2020-11-18', '2020-11-19', '2020-11-20', '2020-11-21', '2020-11-22', '2020-11-23', '2020-11-24', '2020-11-25', '2020-11-26', '2020-11-27', '2020-11-28', '2020-11-29', '2020-11-30', '2020-12-01', '2020-12-02', '2020-12-03', '2020-12-04', '2020-12-05', '2020-12-06', '2020-12-07', '2020-12-08', '2020-12-09', '2020-12-10', '2020-12-11', '2020-12-12', '2020-12-13', '2020-12-14', '2020-12-15', '2020-12-16', '2020-12-17', '2020-12-18', '2020-12-19', '2020-12-20', '2020-12-21', '2020-12-22', '2020-12-23', '2020-12-24', '2020-12-25', '2020-12-26', '2020-12-27', '2020-12-28', '2020-12-29', '2020-12-30', '2020-12-31', '2021-01-01', '2021-01-02', '2021-01-03', '2021-01-04', '2021-01-05', '2021-01-06', '2021-01-07', '2021-01-08', '2021-01-09', '2021-01-10', '2021-01-11', '2021-01-12', '2021-01-13', '2021-01-14', '2021-01-15', '2021-01-16', '2021-01-17', '2021-01-18', '2021-01-19', '2021-01-20', '2021-01-21', '2021-01-22', '2021-01-23', '2021-01-24', '2021-01-25', '2021-01-26', '2021-01-27', '2021-01-28', '2021-01-29', '2021-01-30', '2021-01-31', '2021-02-01', '2021-02-02'];
-
-        let dateSetTransactionVolume_loopring = ['2020-06-17', '2020-06-18', '2020-06-19', '2020-06-20', '2020-06-21', '2020-06-22', '2020-06-23', '2020-06-24', '2020-06-25', '2020-06-26', '2020-06-27', '2020-06-28', '2020-06-29', '2020-06-30', '2020-07-01', '2020-07-02', '2020-07-03', '2020-07-04', '2020-07-05', '2020-07-06', '2020-07-07', '2020-07-08', '2020-07-09', '2020-07-10', '2020-07-11', '2020-07-12', '2020-07-13', '2020-07-14', '2020-07-15', '2020-07-16', '2020-07-17', '2020-07-18', '2020-07-19', '2020-07-20', '2020-07-21', '2020-07-22', '2020-07-23', '2020-07-24', '2020-07-25', '2020-07-26', '2020-07-27', '2020-07-28', '2020-07-29', '2020-07-30', '2020-07-31', '2020-08-01', '2020-08-02', '2020-08-03', '2020-08-04', '2020-08-05', '2020-08-06', '2020-08-07', '2020-08-08', '2020-08-09', '2020-08-10', '2020-08-11', '2020-08-12', '2020-08-13', '2020-08-14', '2020-08-15', '2020-08-16', '2020-08-17', '2020-08-18', '2020-08-19', '2020-08-20', '2020-08-21', '2020-08-22', '2020-08-23', '2020-08-24', '2020-08-25', '2020-08-26', '2020-08-27', '2020-08-28', '2020-08-29', '2020-08-30', '2020-08-31', '2020-09-01', '2020-09-02', '2020-09-03', '2020-09-04', '2020-09-05', '2020-09-06', '2020-09-07', '2020-09-08', '2020-09-09', '2020-09-10', '2020-09-11', '2020-09-12', '2020-09-13', '2020-09-14', '2020-09-15', '2020-09-16', '2020-09-17', '2020-09-18', '2020-09-19', '2020-09-20', '2020-09-21', '2020-09-22', '2020-09-23', '2020-09-24', '2020-09-25', '2020-09-26', '2020-09-27', '2020-09-28', '2020-09-29', '2020-09-30', '2020-10-01', '2020-10-02', '2020-10-03', '2020-10-04', '2020-10-05', '2020-10-06', '2020-10-07', '2020-10-08', '2020-10-09', '2020-10-10', '2020-10-11', '2020-10-12', '2020-10-13', '2020-10-14', '2020-10-15', '2020-10-16', '2020-10-17', '2020-10-18', '2020-10-19', '2020-10-20', '2020-10-21', '2020-10-22', '2020-10-23', '2020-10-24', '2020-10-25', '2020-10-26', '2020-10-27', '2020-10-28', '2020-10-29', '2020-10-30', '2020-10-31', '2020-11-01', '2020-11-02', '2020-11-03', '2020-11-04', '2020-11-05', '2020-11-06', '2020-11-07', '2020-11-08', '2020-11-09', '2020-11-10', '2020-11-11', '2020-11-12', '2020-11-13', '2020-11-14', '2020-11-15', '2020-11-16', '2020-11-17', '2020-11-18', '2020-11-19', '2020-11-20', '2020-11-21', '2020-11-22', '2020-11-23', '2020-11-24', '2020-11-25', '2020-11-26', '2020-11-27', '2020-11-28', '2020-11-29', '2020-11-30', '2020-12-01', '2020-12-02', '2020-12-03', '2020-12-04', '2020-12-05', '2020-12-06', '2020-12-07', '2020-12-08', '2020-12-09', '2020-12-10', '2020-12-11', '2020-12-12', '2020-12-13', '2020-12-14', '2020-12-15', '2020-12-16', '2020-12-17', '2020-12-18', '2020-12-19', '2020-12-20', '2020-12-21', '2020-12-22', '2020-12-23', '2020-12-24', '2020-12-25', '2020-12-26', '2020-12-27', '2020-12-28', '2020-12-29', '2020-12-30', '2020-12-31', '2021-01-01', '2021-01-02', '2021-01-03', '2021-01-04', '2021-01-05', '2021-01-06', '2021-01-07', '2021-01-08', '2021-01-09', '2021-01-10', '2021-01-11', '2021-01-12', '2021-01-13', '2021-01-14', '2021-01-15', '2021-01-16', '2021-01-17', '2021-01-18', '2021-01-19', '2021-01-20', '2021-01-21', '2021-01-22', '2021-01-23', '2021-01-24', '2021-01-25', '2021-01-26', '2021-01-27', '2021-01-28', '2021-01-29', '2021-01-30', '2021-01-31', '2021-02-01', '2021-02-02'];
-
-        let dateSetTransactionVolume_deversifi = ['2020-06-09', '2020-06-10', '2020-06-11', '2020-06-12', '2020-06-13', '2020-06-14', '2020-06-15', '2020-06-16', '2020-06-17', '2020-06-18', '2020-06-19', '2020-06-20', '2020-06-21', '2020-06-22', '2020-06-23', '2020-06-24', '2020-06-25', '2020-06-26', '2020-06-27', '2020-06-28', '2020-06-29', '2020-06-30', '2020-07-01', '2020-07-02', '2020-07-03', '2020-07-04', '2020-07-05', '2020-07-06', '2020-07-07', '2020-07-08', '2020-07-09', '2020-07-10', '2020-07-11', '2020-07-12', '2020-07-13', '2020-07-14', '2020-07-15', '2020-07-16', '2020-07-17', '2020-07-18', '2020-07-19', '2020-07-20', '2020-07-21', '2020-07-22', '2020-07-23', '2020-07-24', '2020-07-25', '2020-07-26', '2020-07-27', '2020-07-28', '2020-07-29', '2020-07-30', '2020-07-31', '2020-08-01', '2020-08-02', '2020-08-03', '2020-08-04', '2020-08-05', '2020-08-06', '2020-08-07', '2020-08-08', '2020-08-09', '2020-08-10', '2020-08-11', '2020-08-12', '2020-08-13', '2020-08-14', '2020-08-15', '2020-08-16', '2020-08-17', '2020-08-18', '2020-08-19', '2020-08-20', '2020-08-21', '2020-08-22', '2020-08-23', '2020-08-24', '2020-08-25', '2020-08-26', '2020-08-27', '2020-08-28', '2020-08-29', '2020-08-30', '2020-08-31', '2020-09-01', '2020-09-02', '2020-09-03', '2020-09-04', '2020-09-05', '2020-09-06', '2020-09-07', '2020-09-08', '2020-09-09', '2020-09-10', '2020-09-11', '2020-09-12', '2020-09-13', '2020-09-14', '2020-09-15', '2020-09-16', '2020-09-17', '2020-09-18', '2020-09-19', '2020-09-20', '2020-09-21', '2020-09-22', '2020-09-23', '2020-09-24', '2020-09-25', '2020-09-26', '2020-09-27', '2020-09-28', '2020-09-29', '2020-09-30', '2020-10-01', '2020-10-02', '2020-10-03', '2020-10-04', '2020-10-05', '2020-10-06', '2020-10-07', '2020-10-08', '2020-10-09', '2020-10-10', '2020-10-11', '2020-10-12', '2020-10-13', '2020-10-14', '2020-10-15', '2020-10-16', '2020-10-17', '2020-10-18', '2020-10-19', '2020-10-20', '2020-10-21', '2020-10-22', '2020-10-23', '2020-10-24', '2020-10-25', '2020-10-26', '2020-10-27', '2020-10-28', '2020-10-29', '2020-10-30', '2020-10-31', '2020-11-01', '2020-11-02', '2020-11-03', '2020-11-04', '2020-11-05', '2020-11-06', '2020-11-07', '2020-11-08', '2020-11-09', '2020-11-10', '2020-11-11', '2020-11-12', '2020-11-13', '2020-11-14', '2020-11-15', '2020-11-16', '2020-11-17', '2020-11-18', '2020-11-19', '2020-11-20', '2020-11-21', '2020-11-22', '2020-11-23', '2020-11-24', '2020-11-25', '2020-11-26', '2020-11-27', '2020-11-28', '2020-11-29', '2020-11-30', '2020-12-01', '2020-12-02', '2020-12-03', '2020-12-04', '2020-12-05', '2020-12-06', '2020-12-07', '2020-12-08', '2020-12-09', '2020-12-10', '2020-12-11', '2020-12-12', '2020-12-13', '2020-12-14', '2020-12-15', '2020-12-16', '2020-12-17', '2020-12-18', '2020-12-19', '2020-12-20', '2020-12-21', '2020-12-22', '2020-12-23', '2020-12-24', '2020-12-25', '2020-12-26', '2020-12-27', '2020-12-28', '2020-12-29', '2020-12-30', '2020-12-31', '2021-01-01', '2021-01-02', '2021-01-03', '2021-01-04', '2021-01-05', '2021-01-06', '2021-01-07', '2021-01-08', '2021-01-09', '2021-01-10', '2021-01-11', '2021-01-12', '2021-01-13', '2021-01-14', '2021-01-15', '2021-01-16', '2021-01-17', '2021-01-18', '2021-01-19', '2021-01-20', '2021-01-21', '2021-01-22', '2021-01-23', '2021-01-24', '2021-01-25', '2021-01-26', '2021-01-27', '2021-01-28', '2021-01-29', '2021-01-30', '2021-01-31', '2021-02-01', '2021-02-02'];
-
-
-        let lineCharttvt = new Chart(tvt, {
-            type : 'line',//pie, line, doughnut, polarArea
-            data : {
-                labels : dateSettvt,
-                datasets : [{
-                    label : 'TVTL2',
-                    data : [
-                    257960, 265868, 288835, 22120588, 268612, 249756, 294778, 280229, 332439, 322039, 314780, 359192, 415256, 357366, 380502, 419051, 414140, 340457, 342953, 344664, 344222, 193445, 228808, 333456, 340481, 319982, 307028, 1898038, 2188098, 2140390, 2129458, 1965023, 2200919, 2244899, 2195321, 2228905, 2102911, 2107800, 2003196, 2099582, 2118189, 2163123, 2240982, 2238677, 2286883, 2286616, 2746563, 2451175, 2578235, 2543143, 2365184, 2374313, 2374926, 2352432, 2376813, 2290380, 2586142, 2574730, 2872479, 2753456, 2609340, 2615117, 2794358, 2834900, 2858202, 2957880, 3013705, 2999145, 3000781, 3275305, 3154362, 3220476, 3253752, 3190317, 3141291, 3119130, 3021095, 3222763, 3212956, 3195764, 2856671, 2828722, 2909691, 3068268, 3098140, 2987536, 3086717, 3187669, 3318555, 3314083, 3240969, 3070607, 3204991, 3199097, 3093138, 3162598, 3147100, 3272457, 3452715, 3467735, 3832776, 3619517, 3872320, 3720219, 3843000, 3852255, 3783501, 3777049, 3886023, 3898601, 3888478, 3919079, 3607344, 3734299, 3751797, 3641767, 3636649, 3717991, 3707081, 3674209, 3152186, 3185669, 3183061, 3389066, 3373792, 3268029, 3222508, 3171092, 3050058, 3101057, 3156419, 3146335, 3241959, 3164221, 3155953, 3216426, 3199579, 3395512, 3351222, 3485060, 3464436, 3379555, 3449348, 3466062, 3371310, 3399664, 3375796, 3340691, 3321671, 3393793, 3434646, 3365007, 3499528, 3759462, 3876841, 3892145, 4245435, 4330954, 4506680, 4464577, 4503177, 4784220, 4951789, 5531705, 5212893, 5410556, 5460239, 5649193, 5497776, 5274396, 5533054, 5434622, 5580945, 5376105, 5472757, 6012408, 6232645, 6114431, 6115396, 6040237, 5925499, 5800238, 5857742, 5444698, 5498870, 5427377, 5655772, 5331629, 5371672, 5353972, 5534695, 5581680, 6003863, 6357362, 7038974, 6522273, 5655885, 5731807, 4974747, 5325270, 5331641, 5118505, 5327231, 5549802, 5566721, 5775095, 5442253, 5547704, 5386381, 5545586, 6041768, 5950891, 6046411, 5823315, 5060598, 5110378, 4726623, 5142380, 5172449, 5213891, 5269382, 5218035, 5317790, 5318889, 5221632, 5110489, 5145177, 5241942, 5255690, 5063418, 5071421, 5214651, 5412674, 5473037, 5511122, 5689592, 5610242, 5578398, 5575636, 5369073, 5437514, 5586115, 5598700, 5456213, 5799476, 6143712, 6073956, 6119076, 6016040, 5812887, 6018293, 5784247, 5759073, 5696527, 5836593, 5970433, 5749478, 5827755, 6045525, 6521733, 7129907, 6802456, 7065713, 6909350, 6994833, 7195928, 7164437, 7372022, 7113482, 6876018, 6961095, 7294362, 7206132, 7102769, 7672306, 8306693, 8433047, 9220282, 9165484, 2060661, 1887903, 8866354, 17062440, 19020599, 20681450, 21443633, 21153096, 22624021, 22231717, 21579083, 22710758, 22398516, 23048156, 25000613, 25156320, 25638280, 28205196, 30244022, 30593632, 30608933, 91074497, 31438316, 31267266, 31624077, 30933895, 30271026, 31189149, 30553221, 28308995, 29588991, 29338717, 29494038, 30194905, 32211102, 32658426, 31799950, 30582571, 31644092, 33874491, 44964622, 56418880, 82242359, 74301525, 71396046, 69860991, 73347335, 67393304, 62692684, 64504351, 79686913, 85887772, 104991821, 112333844, 120494767, 119066056, 129220724, 127460242, 110461221, 122912666, 129864539, 167082525, 207463221, 212409687, 201086502, 230257423, 228863981, 237636537, 239690519, 254285321, 258932759
-                    ],
-                    lineTension : 0,
-                    backgroundColor:[
-                        'rgba(0, 0, 0, 0)',
-                    ],
-                    borderWidth : 3,
-                    borderColor : 'cornflowerblue',
-                    hoverBorderWidth : 0,
-                    pointBackgroundColor : 'cornflowerblue',
-                }]
-            },
-            options : {
-                title : {
-                    display : true,
-                    text : 'Total Value Transferred onto Layer2 (TVTL2)',
-                    fontSize : 20,
-                    fontColor : 'cornflowerblue'
-                },
-                legend : {
-                    display : false,
-                    position : 'bottom'
-                },
-                tooltips : {
-                    enabled : true,
-                    mode : 'index',
-                    intersect : false,
-                    callbacks : {
-                        label: function(tooltipItem, data) {
-                            return data.datasets[tooltipItem.datasetIndex].label + ': $' + tooltipItem.yLabel.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-                        }
-                    }
-                },
-                layout : {
-                    padding : {
-                        left : 0,
-                        right : 0, 
-                        top : 0,
-                        bottom : 0
-                    }
-                },
-                elements : {
-                    point : {
-                        radius : 0
-                    }
-                },
-                scales: {
-                    yAxes : [{
-                        ticks : {
-                            callback : function(value, index, values){
-                                return '$' + value/1000000 + 'M';
-                            }
-                        }
-                    }],
-                    xAxes : [{
-                        ticks : {
-                            maxTicksLimit : 20 // The numbers of max x-axis gridlines
-                        }
-                    }]
-                },
-                watermark : {
-                    image : "/assets/icons/l2_watermark.png",
-                    x : 0,
-                    y : 0,
-                    width : 100,
-                    height : 100,
-                    opacity : 0.25,
-                    alignX : "middle",
-                    alignY : "middle",
-                    alignToChartArea : false,
-                    position : "back"
-                }
-
-            }
-        });
-
-
-        let lineCharttvt_LoopringV2_ETH = new Chart(tvt_LoopringV2_ETH, {
-            type : 'line',//pie, line, doughnut, polarArea
-            data : {
-                labels : dateSettvt_LoopringV2_ETH,
-                datasets : [{
-                    label : 'TVTL2',
-                    data : [
-                    624, 995595, 4152649, 4480737, 4955768, 4875660, 5136876, 5262084, 4834209, 5199448, 5363045, 5262502, 6642649, 7064042, 6941802, 8678651, 9060496, 9836565, 10079722, 10136937, 70944610, 10979982, 11217232, 11249575, 10957425, 10495482, 10954601, 10118959, 10527043, 10715437, 10539005, 10903039, 11180195, 11348556, 11061413, 10709487, 10732546, 11257626, 14211713, 16735924, 21797821, 29844483, 31129895, 31626437, 32464398, 31644056, 29266112, 28628921, 31366371, 34817209, 33138367, 34337520, 34587124, 35530062, 34673753, 35277511, 26443850, 29212275, 29315259, 34061182, 46284030, 49888970, 45271565, 47973752, 56701978, 58166431, 56585833, 59628765, 63968739, 69080454
-                    ],
-                    lineTension : 0,
-                    backgroundColor:[
-                        'rgba(0, 0, 0, 0)',
-                    ],
-                    borderWidth : 3,
-                    borderColor : 'cornflowerblue',
-                    hoverBorderWidth : 0,
-                    pointBackgroundColor : 'cornflowerblue',
-                }]
-            },
-            options : {
-                title : {
-                    display : true,
-                    text : 'TVTL2 on Loopring v2 (ETH)',
-                    fontSize : 16,
-                    fontColor : 'cornflowerblue'
-                },
-                legend : {
-                    display : false,
-                    position : 'bottom'
-                },
-                tooltips : {
-                    enabled : true,
-                    mode : 'index',
-                    intersect : false,
-                    callbacks : {
-                        label: function(tooltipItem, data) {
-                            return data.datasets[tooltipItem.datasetIndex].label + ': $' + tooltipItem.yLabel.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-                        }
-                    }
-                },
-                layout : {
-                    padding : {
-                        left : 0,
-                        right : 0, 
-                        top : 0,
-                        bottom : 0
-                    }
-                },
-                elements : {
-                    point : {
-                        radius : 0
-                    }
-                },
-                scales: {
-                    yAxes : [{
-                        ticks : {
-                            callback : function(value, index, values){
-                                return '$' + value/1000000 + 'M';
-                            }
-                        }
-                    }],
-                    xAxes : [{
-                        ticks : {
-                            maxTicksLimit : 10 // The numbers of max x-axis gridlines
-                        }
-                    }]
-                },
-                watermark : {
-                    image : "/assets/icons/l2_watermark.png",
-                    x : 0,
-                    y : 0,
-                    width : 100,
-                    height : 100,
-                    opacity : 0.25,
-                    alignX : "middle",
-                    alignY : "middle",
-                    alignToChartArea : false,
-                    position : "back"
-                }
-
-            }
-        });
-
-
-
-
-        let lineCharttvt_LoopringV2_LRC = new Chart(tvt_LoopringV2_LRC, {
-            type : 'line',//pie, line, doughnut, polarArea
-            data : {
-                labels : dateSettvt_LoopringV2_LRC,
-                datasets : [{
-                    label : 'TVTL2',
-                    data : [
-                    209, 6233662, 11251444, 12779808, 13867130, 14803194, 14256358, 15557651, 15734925, 14633344, 15596651, 15423696, 15313663, 16816893, 17129650, 15932646, 18092506, 19321165, 19452533, 19405628, 19009536, 19346247, 18923388, 19287876, 18941146, 18800158, 19306643, 19585209, 16895838, 18081982, 18002963, 18078357, 18474552, 20330417, 21050626, 20555243, 19328800, 19844409, 18982173, 27509231, 33899453, 51660027, 42424694, 39030881, 36620808, 40948947, 37474615, 33436026, 32487465, 44164547, 43813671, 42314681, 42607595, 46136340, 44980546, 51321251, 50570936, 41295713, 45142685, 45786697, 59503964, 60049809, 61753765, 56244473, 69838766, 68008613, 73840555, 73943668, 81246115, 81935859
-                    ],
-                    lineTension : 0,
-                    backgroundColor:[
-                        'rgba(0, 0, 0, 0)',
-                    ],
-                    borderWidth : 3,
-                    borderColor : 'cornflowerblue',
-                    hoverBorderWidth : 0,
-                    pointBackgroundColor : 'cornflowerblue',
-                }]
-            },
-            options : {
-                title : {
-                    display : true,
-                    text : 'TVTL2 on Loopring v2 (LRC)',
-                    fontSize : 16,
-                    fontColor : 'cornflowerblue'
-                },
-                legend : {
-                    display : false,
-                    position : 'bottom'
-                },
-                tooltips : {
-                    enabled : true,
-                    mode : 'index',
-                    intersect : false,
-                    callbacks : {
-                        label: function(tooltipItem, data) {
-                            return data.datasets[tooltipItem.datasetIndex].label + ': $' + tooltipItem.yLabel.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-                        }
-                    }
-                },
-                layout : {
-                    padding : {
-                        left : 0,
-                        right : 0, 
-                        top : 0,
-                        bottom : 0
-                    }
-                },
-                elements : {
-                    point : {
-                        radius : 0
-                    }
-                },
-                scales: {
-                    yAxes : [{
-                        ticks : {
-                            callback : function(value, index, values){
-                                return '$' + value/1000000 + 'M';
-                            }
-                        }
-                    }],
-                    xAxes : [{
-                        ticks : {
-                            maxTicksLimit : 10 // The numbers of max x-axis gridlines
-                        }
-                    }]
-                },
-                watermark : {
-                    image : "/assets/icons/l2_watermark.png",
-                    x : 0,
-                    y : 0,
-                    width : 100,
-                    height : 100,
-                    opacity : 0.25,
-                    alignX : "middle",
-                    alignY : "middle",
-                    alignToChartArea : false,
-                    position : "back"
-                }
-
-            }
-        });
-
-
-
-
-
-        let lineCharttvt_LoopringV1_ETH = new Chart(tvt_LoopringV1_ETH, {
-            type : 'line',//pie, line, doughnut, polarArea
-            data : {
-                labels : dateSettvt_LoopringV1_ETH,
-                datasets : [{
-                    label : 'TVTL2',
-                    data : [
-                    314780, 359192, 415256, 357366, 380502, 419051, 414140, 340457, 342953, 344664, 344222, 193445, 228808, 333456, 340481, 319982, 307028, 1898038, 2188098, 2140390, 2129458, 1965023, 2200919, 2244899, 2195321, 2228905, 2102911, 2107800, 2003196, 2099582, 2118189, 2163123, 2240982, 2238677, 2286883, 2286616, 2746563, 2451175, 2578235, 2543143, 2365184, 2374313, 2374926, 2352432, 2376813, 2290380, 2586142, 2574730, 2872479, 2753456, 2609340, 2615117, 2794358, 2834900, 2858202, 2957880, 3013705, 2999145, 3000781, 3275305, 3154362, 3220476, 3253752, 3190317, 3141291, 3119130, 3021095, 3222763, 3212956, 3195764, 2856671, 2828722, 2909691, 3068268, 3098140, 2987536, 3086717, 3187669, 3318555, 3314083, 3240969, 3070607, 3204991, 3199097, 3093138, 3162598, 3147100, 3272457, 3452715, 3467735, 3832776, 3619517, 3872320, 3720219, 3843000, 3852255, 3783501, 3777049, 3886023, 3898601, 3888478, 3919079, 3607344, 3734299, 3751797, 3641767, 3636649, 3717991, 3707081, 3674209, 3152186, 3185669, 3183061, 3389066, 3373792, 3268029, 3222508, 3171092, 3050058, 3101057, 3156419, 3146335, 3241959, 3164221, 3155953, 3216426, 3199579, 3395512, 3351222, 3485060, 3464436, 3379555, 3449348, 3466062, 3371310, 3399664, 3375796, 3340691, 3321671, 3393793, 3434646, 3365007, 3499528, 3759462, 3876841, 3892145, 4245435, 4330954, 4506680, 4464577, 4503177, 4784220, 4951789, 5531705, 5212893, 5410556, 5460239, 5649193, 5497776, 5274396, 5533054, 5434622, 5580945, 5376105, 5472757, 6012408, 6232645, 6114431, 6115396, 6040237, 5925499, 5800238, 5857742, 5444698, 5498870, 5427377, 5655772, 5331629, 5371672, 5353972, 5534695, 5581680, 6003863, 6357362, 7038974, 6522273, 5655885, 5731807, 4974747, 5325270, 5331641, 5118505, 5327231, 5549802, 5566721, 5775095, 5442253, 5547704, 5386381, 5545586, 6041768, 5950891, 6046411, 5823315, 5060598, 5110378, 4726623, 5142380, 5172449, 5213891, 5269382, 5218035, 5317790, 5318889, 5221632, 5110489, 5145177, 5241942, 5255690, 5063418, 5071421, 5214651, 5412674, 5473037, 5511122, 5689592, 5610242, 5578398, 5575636, 5369073, 5437514, 5586115, 5598700, 5456213, 5799476, 6143712, 6073956, 6119076, 6016040, 5812887, 6018293, 5784247, 5759073, 5696527, 5836593, 5970433, 5749478, 5827755, 6045525, 6521733, 7129907, 6802456, 7065713, 6909350, 6994833, 7195928, 7164437, 7372022, 7113482, 6876018, 6961095, 7294362, 7206132, 7102769, 7672306, 8306693, 8433047, 9220282, 9165484, 2060661, 1887069, 1637095, 1658346, 1760052, 1858551, 1764778, 1759860, 1804285, 1662583, 1746290, 1751060, 1712316, 1091842, 1119677, 1084867, 1026982, 1052194, 1086291, 1061376, 1066367, 1120350, 1112086, 1126646, 1086625, 1035323, 975385, 927905, 849052, 886113, 791570, 796747, 512641, 540157, 532128, 546386, 535220, 521225, 542056, 680603, 719466, 721604, 737848, 746936, 738727, 775784, 754331, 652577, 627737, 650515, 705157, 667903, 695382, 695511, 696908, 725363, 604769, 483352, 536612, 534850, 603478, 571415, 592783, 512071, 544542, 555673, 518382, 492996, 515650, 567176, 624617
-                    ],
-                    lineTension : 0,
-                    backgroundColor:[
-                        'rgba(0, 0, 0, 0)',
-                    ],
-                    borderWidth : 3,
-                    borderColor : 'cornflowerblue',
-                    hoverBorderWidth : 0,
-                    pointBackgroundColor : 'cornflowerblue',
-                }]
-            },
-            options : {
-                title : {
-                    display : true,
-                    text : 'TVTL2 on Loopring v1 (ETH)',
-                    fontSize : 16,
-                    fontColor : 'cornflowerblue'
-                },
-                legend : {
-                    display : false,
-                    position : 'bottom'
-                },
-                tooltips : {
-                    enabled : true,
-                    mode : 'index',
-                    intersect : false,
-                    callbacks : {
-                        label: function(tooltipItem, data) {
-                            return data.datasets[tooltipItem.datasetIndex].label + ': $' + tooltipItem.yLabel.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-                        }
-                    }
-                },
-                layout : {
-                    padding : {
-                        left : 0,
-                        right : 0, 
-                        top : 0,
-                        bottom : 0
-                    }
-                },
-                elements : {
-                    point : {
-                        radius : 0
-                    }
-                },
-                scales: {
-                    yAxes : [{
-                        ticks : {
-                            callback : function(value, index, values){
-                                return '$' + value/1000000 + 'M';
-                            }
-                        }
-                    }],
-                    xAxes : [{
-                        ticks : {
-                            maxTicksLimit : 10 // The numbers of max x-axis gridlines
-                        }
-                    }]
-                },
-                watermark : {
-                    image : "/assets/icons/l2_watermark.png",
-                    x : 0,
-                    y : 0,
-                    width : 100,
-                    height : 100,
-                    opacity : 0.25,
-                    alignX : "middle",
-                    alignY : "middle",
-                    alignToChartArea : false,
-                    position : "back"
-                }
-
-            }
-        });
-
-
-
-
-
-
-
-        let lineChartsynthetixtvt = new Chart(synthetixtvt, {
-            type : 'line',//pie, line, doughnut, polarArea
-            data : {
-                labels : dateSettvt_synthetix,
-                datasets : [{
-                    label : 'TVTL2',
-                    data : [
-                    8267830, 27644238, 34443613, 38131456, 38686393, 42017192, 49962103, 39416620, 47919872, 49413182, 60723115, 96931659, 104872285, 96323734, 103161005, 102170554, 106717153, 105602434, 108503290, 107291828
-                    ],
-                    lineTension : 0,
-                    backgroundColor:[
-                        'rgba(0, 0, 0, 0)',
-                    ],
-                    borderWidth : 3,
-                    borderColor : 'cornflowerblue',
-                    hoverBorderWidth : 0,
-                    pointBackgroundColor : 'cornflowerblue',
-                }]
-            },
-            options : {
-                title : {
-                    display : true,
-                    text : 'TVTL2 on Synthetix (SNX)',
-                    fontSize : 16,
-                    fontColor : 'cornflowerblue'
-                },
-                legend : {
-                    display : false,
-                    position : 'bottom'
-                },
-                tooltips : {
-                    enabled : true,
-                    mode : 'index',
-                    intersect : false,
-                    callbacks : {
-                        label: function(tooltipItem, data) {
-                            return data.datasets[tooltipItem.datasetIndex].label + ': $' + tooltipItem.yLabel.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-                        }
-                    }
-                },
-                layout : {
-                    padding : {
-                        left : 0,
-                        right : 0, 
-                        top : 0,
-                        bottom : 0
-                    }
-                },
-                elements : {
-                    point : {
-                        radius : 0
-                    }
-                },
-                scales: {
-                    yAxes : [{
-                        ticks : {
-                            callback : function(value, index, values){
-                                return '$' + value/1000000 + 'M';
-                            }
-                        }
-                    }],
-                    xAxes : [{
-                        ticks : {
-                            maxTicksLimit : 10 // The numbers of max x-axis gridlines
-                        }
-                    }]
-                },
-                watermark : {
-                    image : "/assets/icons/l2_watermark.png",
-                    x : 0,
-                    y : 0,
-                    width : 100,
-                    height : 100,
-                    opacity : 0.25,
-                    alignX : "middle",
-                    alignY : "middle",
-                    alignToChartArea : false,
-                    position : "back"
-                }
-
-            }
-        });
-
-
-
-
-        let lineChartdataTransactionVolume = new Chart(dataTransactionVolume, {
-            type : 'line',//pie, line, doughnut, polarArea
-            data : {
-                labels : dateSetTransactionVolume,
-                datasets : [{
-                    label : 'Tx Volume',
-                    data : [
-                        576554, 681175, 645635, 750680, 862843, 728096, 684539, 615987, 740947, 674032, 914633, 1182573, 1069466, 1289252, 1185860, 1269903, 1278395, 878616, 962524, 629132, 687827, 724922, 638864, 730059, 781560, 717830, 528945, 474938, 575947, 818675, 1287519, 1119549, 1036630, 942780, 870915, 796663, 777575, 585455, 830072, 880840, 548762, 441182, 523462, 421139, 358528, 493330, 580431, 383681, 324002, 311377, 395241, 328393, 431771, 380485, 483431, 301078, 356627, 395836, 453514, 485105, 660870, 673252, 432627, 561837, 702734, 548209, 551368, 590655, 393394, 362782, 377847, 489025, 672614, 637203, 627810, 762062, 727595, 678033, 719436, 750521, 1051942, 738825, 1087466, 1364258, 1090439, 1175670, 1846939, 1863456, 1275197, 990980, 1447147, 1305488, 1241430, 1571505, 1657517, 1494502, 1353338, 1777739, 1619577, 1879438, 2184123, 3039981, 1550644, 2534185, 3630598, 4136233, 2952027, 2427014, 1484076, 1607099, 1970905, 2040448, 1620624, 1803233, 1572287, 1466312, 1561472, 1363187, 1095946, 1090200, 2281452, 1317406, 1524528, 1380344, 1036669, 1112448, 2297280, 1852414, 2009135, 3466680, 2286056, 1655581, 1379527, 1975612, 1997711, 2060119, 2225467, 2318787, 2116810, 2299817, 3130563, 2452731, 2670683, 2098471, 2410337, 2096328, 1551934, 2012776, 2318227, 2787293, 2474867, 2516539, 1941548, 2082764, 2124302, 2191700, 2642936, 2034759, 1811961, 1990549, 1839427, 3505971, 3143622, 2522839, 2444366, 2715825, 2853588, 3137727, 3543033, 3164088, 2732768, 3166583, 2979041, 3049516, 3597858, 3473465, 2225105, 2012561, 1694490, 2470213, 2180555, 2860305, 2569381, 2749458, 2610768, 2739745, 2364393, 3002706, 3503665, 1130161, 2942852, 2997394, 3596248, 4423324, 5181112, 2704665, 3732985, 3480564, 4782160, 2947898, 3218933, 2799955, 1805635, 2313654, 2096498, 2321000, 2714357, 2216734, 2468538, 3239103, 2733646, 3268815, 1981768, 2464245, 2431630, 2356302, 1924665, 1678095, 1311127, 1589841, 2500812, 2084458, 1762756, 1530703, 2134320, 2740406, 1910166, 1518468, 1514036, 1416041, 1102886, 1456715, 1140417, 1079354, 1529653, 2765411, 1146049, 1954771, 1241967, 1083234, 1225853, 1976404, 2016311, 1851461, 1429139, 1881241, 2224034, 1881879, 1838573, 1644022, 2433804, 1649105, 2523245, 2263464, 1911644, 2003149, 2274850, 1601095, 1369301, 2675117, 3478225, 3028352, 2609119, 1790292, 1366034, 1735354, 2083674, 3054054, 2645898, 1810569, 1803758, 1897746, 1531198, 1543949, 1822303, 1819608, 2683462, 4430424, 2448209, 2573298, 3275292, 2434937, 3542043, 2773919, 2385718, 2376892, 1638422, 1834529, 3064569, 3632919, 2362336, 2908232, 1945718, 2626858, 2501323, 3639869, 2521759, 4398400, 3002442, 2376833, 2522449, 2802060, 3664973, 3159678, 2502668, 2048284, 2255753, 1926599, 1803913, 1705829, 2988334, 2024342, 3001117, 881011, 767553, 637747, 2904818, 4311462, 6784111, 5952990, 3013764, 3051976, 4476599, 3195801, 3164614, 3212796, 2497995, 2245076, 3750109, 3206776, 1507662, 1719684, 1360910, 865246, 1383222, 3509002, 5642070, 3409410, 3097701, 5447404, 10459015, 5655600, 5728409, 6729361, 4649690, 4386308, 4629300, 6408774, 5653140, 4520837, 4149337, 3778893, 5849565, 4571277, 3557289, 1732688, 1438962, 12407954, 13990856, 15037871, 11061145, 21892756, 17879137, 20567395, 13106715, 13527537
-                    ],
-                    lineTension : 0,
-                    backgroundColor:[
-                        'rgba(0, 0, 0, 0)',
-                    ],
-                    borderWidth : 3,
-                    borderColor : 'cornflowerblue',
-                    hoverBorderWidth : 0,
-                    pointBackgroundColor : 'cornflowerblue',
-                }]
-            },
-            options : {
-                title : {
-                    display : true,
-                    text : 'Transaction Volume on Layer2 DEX',
-                    fontSize : 20,
-                    fontColor : 'cornflowerblue'
-                },
-                legend : {
-                    display : false,
-                    position : 'bottom'
-                },
-                tooltips : {
-                    enabled : true,
-                    mode : 'index',
-                    intersect : false,
-                    callbacks : {
-                        label: function(tooltipItem, data) {
-                            return data.datasets[tooltipItem.datasetIndex].label + ': $' + tooltipItem.yLabel.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-                        }
-                    }
-                },
-                layout : {
-                    padding : {
-                        left : 0,
-                        right : 0, 
-                        top : 0,
-                        bottom : 0
-                    }
-                },
-                elements : {
-                    point : {
-                        radius : 0
-                    }
-                },
-                scales: {
-                    yAxes : [{
-                        ticks : {
-                            callback : function(value, index, values){
-                                return '$' + value/1000000 + 'M';
-                            }
-                        }
-                    }],
-                    xAxes : [{
-                        ticks : {
-                            maxTicksLimit : 20 // The numbers of max x-axis gridlines
-                        }
-                    }]
-                },
-                watermark : {
-                    image : "/assets/icons/l2_watermark.png",
-                    x : 0,
-                    y : 0,
-                    width : 100,
-                    height : 100,
-                    opacity : 0.25,
-                    alignX : "middle",
-                    alignY : "middle",
-                    alignToChartArea : false,
-                    position : "back"
-                }
-
-            }
-        });
-
-
-
-        let lineChartloopringTxVolume = new Chart(loopringTxVolume, {
-            type : 'line',//pie, line, doughnut, polarArea
-            data : {
-                labels : dateSetTransactionVolume_loopring,
-                datasets : [{
-                    label : 'Tx Volume',
-                    data : [
-                    493240, 577032, 389639, 548308, 404737, 374640, 373148, 651815, 420743, 387272, 354611, 385054, 436903, 641606, 535720, 726586, 1011135, 723908, 555294, 616470, 659012, 532516, 761581, 611779, 1416156, 728407, 489401, 669241, 393724, 533056, 382145, 640510, 736040, 579265, 570084, 465032, 327194, 390376, 360067, 476988, 588462, 288150, 419510, 256085, 911004, 981897, 622887, 676164, 507948, 388680, 280725, 348591, 379647, 451898, 400626, 409191, 729747, 986808, 725584, 729871, 512167, 547646, 582533, 587528, 467568, 480082, 372191, 454812, 528680, 378660, 436415, 529687, 565957, 785256, 871694, 887871, 1195597, 972608, 697245, 944496, 764631, 511000, 588345, 1165887, 1337995, 736383, 567614, 880961, 1320270, 884143, 438407, 671816, 430358, 380622, 514782, 427784, 361804, 591580, 587307, 420502, 708909, 290992, 367320, 325264, 382717, 498869, 294656, 229260, 180919, 293891, 172762, 267962, 299801, 222570, 300081, 581035, 601376, 416986, 469126, 494543, 377295, 270504, 350211, 371389, 414881, 340065, 353205, 338807, 376329, 354758, 425605, 563804, 342628, 337318, 252211, 222344, 205970, 272072, 385754, 486999, 580686, 531046, 357170, 437315, 200362, 1418721, 329509, 80721, 208724, 104652, 177908, 145432, 387907, 236531, 434591, 335512, 589339, 1012356, 641358, 514538, 1060288, 671464, 501706, 374914, 412196, 397790, 383373, 318813, 282315, 280854, 232840, 382036, 216725, 256806, 491727, 1253851, 424666, 57571, 36985, 29731, 26245, 34118, 12475, 9984, 19410, 2287, 99, 3127, 537, 209, 0, 0, 763, 390, 0, 0, 500, 0, 0, 3226, 0, 0, 2593797, 3421076, 3044985, 2140743, 1915779, 2011435, 2098563, 2308381, 3768504, 3506593, 2911147, 2618149, 2022283, 3318876, 2157757, 1598524, 698257, 497634, 10497394, 10485209, 11701825, 7862296, 12406817, 12417358, 17741206, 10349334, 10152363
-                    ],
-                    lineTension : 0,
-                    backgroundColor:[
-                        'rgba(0, 0, 0, 0)',
-                    ],
-                    borderWidth : 2,
-                    borderColor : 'cornflowerblue',
-                    hoverBorderWidth : 0,
-                    pointBackgroundColor : 'cornflowerblue',
-                }]
-            },
-            options : {
-                title : {
-                    display : true,
-                    text : 'Tx Volume on Loopring',
-                    fontSize : 16,
-                    fontColor : 'cornflowerblue'
-                },
-                legend : {
-                    display : false,
-                    position : 'bottom'
-                },
-                tooltips : {
-                    enabled : true,
-                    mode : 'index',
-                    intersect : false,
-                    callbacks : {
-                        label: function(tooltipItem, data) {
-                            return data.datasets[tooltipItem.datasetIndex].label + ': $' + tooltipItem.yLabel.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-                        }
-                    }
-                },
-                layout : {
-                    padding : {
-                        left : 0,
-                        right : 0, 
-                        top : 0,
-                        bottom : 0
-                    }
-                },
-                elements : {
-                    point : {
-                        radius : 0
-                    }
-                },
-                scales: {
-                    yAxes : [{
-                        ticks : {
-                            callback : function(value, index, values){
-                                return '$' + value/1000000 + 'M';
-                            }
-                        }
-                    }],
-                    xAxes : [{
-                        ticks : {
-                            maxTicksLimit : 10 // The numbers of max x-axis gridlines
-                        }
-                    }]
-                },
-                watermark : {
-                    image : "/assets/icons/l2_watermark.png",
-                    x : 0,
-                    y : 0,
-                    width : 100,
-                    height : 100,
-                    opacity : 0.25,
-                    alignX : "middle",
-                    alignY : "middle",
-                    alignToChartArea : false,
-                    position : "back"
-                }
-
-            }
-        });
-
-
-
-        let lineChartnashTxVolume = new Chart(nashTxVolume, {
-            type : 'line',//pie, line, doughnut, polarArea
-            data : {
-                labels : dateSetTransactionVolume,
-                datasets : [{
-                    label : 'Tx Volume',
-                    data : [
-                        5346, 4586, 4847, 89992, 7845, 14228, 357, 4527, 6067, 5129, 7255, 127791, 20490, 547, 1487, 37296, 35551, 5120, 9424, 7512, 6463, 5207, 33500, 11106, 4565, 7897, 1717, 533, 1435, 21257, 22586, 24866, 6384, 3270, 8678, 826, 25540, 2423, 14918, 7345, 6292, 8149, 1326, 6189, 809, 2506, 6862, 10335, 1104, 2391, 300, 3148, 1143, 1367, 2359, 1081, 621, 2511, 929, 2215, 2431, 2663, 2703, 29888, 7178, 12376, 5326, 7324, 4595, 1879, 8125, 7505, 7212, 8078, 8391, 15698, 16428, 11881, 8458, 40365, 5609, 4598, 36229, 19182, 25856, 207291, 469001, 655320, 281367, 87009, 585855, 320240, 419372, 420317, 487191, 392448, 189743, 289437, 313694, 155327, 153971, 506264, 22768, 36370, 243050, 513233, 632574, 383485, 34793, 110217, 167693, 165392, 53516, 123589, 182490, 164665, 159330, 55725, 19930, 5360, 1165782, 375154, 362632, 343355, 11304, 9391, 239434, 457447, 126080, 346322, 191563, 19710, 43913, 31057, 383211, 85494, 168934, 157594, 11518, 17189, 265772, 154664, 89507, 15438, 20917, 8640, 6947, 8792, 10306, 13066, 52138, 32029, 20545, 37458, 57702, 130639, 160980, 39887, 32320, 10349, 8963, 69006, 208447, 29716, 39221, 13620, 32530, 11280, 16252, 47885, 148294, 277381, 168937, 101850, 157340, 224878, 205213, 171620, 180827, 388512, 105624, 114238, 154400, 534406, 314879, 277530, 268981, 303412, 19220, 419495, 331815, 156259, 181944, 433994, 294881, 73250, 240495, 362835, 93996, 153424, 166254, 72566, 26309, 57580, 62172, 147198, 107251, 64037, 13089, 35573, 189086, 172251, 200972, 172764, 69505, 41997, 80311, 137678, 88949, 151575, 216073, 14436, 37904, 16824, 190912, 84484, 123667, 48009, 95963, 103517, 79157, 138904, 204338, 272485, 305781, 332307, 181705, 303040, 237034, 161829, 155882, 388237, 1091232, 1151460, 939825, 1276928, 1569523, 1423096, 1191670, 866423, 1041132, 946529, 1310539, 1176070, 1031233, 1173482, 1178038, 739396, 658559, 1639885, 1721526, 1879218, 1628513, 1226277, 807048, 1002156, 1117483, 1374148, 1486396, 1192228, 1066878, 1183681, 964587, 1009346, 1338092, 1282242, 1584343, 1631359, 1016803, 1293190, 1574421, 1341242, 1216144, 1549073, 1204954, 967398, 813345, 974061, 1219352, 2277004, 1146793, 1379767, 891399, 1394783, 1062565, 1522230, 1135449, 2168562, 1327146, 989007, 1329056, 1481209, 1977737, 1846834, 1044790, 933577, 1332915, 1268278, 927392, 1119631, 1377427, 1033730, 1271614, 253482, 360267, 458840, 2766305, 4107330, 6153048, 5114185, 2466726, 2582191, 3668971, 2622192, 2680140, 2655583, 2161998, 1981459, 3067784, 2306211, 1215332, 1327650, 1187760, 659394, 1220663, 2747774, 4808972, 2546759, 1763242, 1888852, 6178860, 1437178, 1096885, 3590574, 1205562, 1241352, 765944, 1128579, 1009734, 598036, 1121596, 858783, 1075504, 966139, 1170656, 669201, 442815, 995668, 2590284, 2973979, 2589766, 5988193, 3622098, 1699481, 1769272, 2422892
-                    ],
-                    lineTension : 0,
-                    backgroundColor:[
-                        'rgba(0, 0, 0, 0)',
-                    ],
-                    borderWidth : 2,
-                    borderColor : 'cornflowerblue',
-                    hoverBorderWidth : 0,
-                    pointBackgroundColor : 'cornflowerblue',
-                }]
-            },
-            options : {
-                title : {
-                    display : true,
-                    text : 'Tx Volume on Nash',
-                    fontSize : 16,
-                    fontColor : 'cornflowerblue'
-                },
-                legend : {
-                    display : false,
-                    position : 'bottom'
-                },
-                tooltips : {
-                    enabled : true,
-                    mode : 'index',
-                    intersect : false,
-                    callbacks : {
-                        label: function(tooltipItem, data) {
-                            return data.datasets[tooltipItem.datasetIndex].label + ': $' + tooltipItem.yLabel.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-                        }
-                    }
-                },
-                layout : {
-                    padding : {
-                        left : 0,
-                        right : 0, 
-                        top : 0,
-                        bottom : 0
-                    }
-                },
-                elements : {
-                    point : {
-                        radius : 0
-                    }
-                },
-                scales: {
-                    yAxes : [{
-                        ticks : {
-                            callback : function(value, index, values){
-                                return '$' + value/1000000 + 'M';
-                            }
-                        }
-                    }],
-                    xAxes : [{
-                        ticks : {
-                            maxTicksLimit : 10 // The numbers of max x-axis gridlines
-                        }
-                    }]
-                },
-                watermark : {
-                    image : "/assets/icons/l2_watermark.png",
-                    x : 0,
-                    y : 0,
-                    width : 100,
-                    height : 100,
-                    opacity : 0.25,
-                    alignX : "middle",
-                    alignY : "middle",
-                    alignToChartArea : false,
-                    position : "back"
-                }
-
-            }
-        });
-
-
-
-        let lineChartdeversifiTxVolume = new Chart(deversifiTxVolume, {
-            type : 'line',//pie, line, doughnut, polarArea
-            data : {
-                labels : dateSetTransactionVolume_deversifi,
-                datasets : [{
-                    label : 'Tx Volume',
-                    data : [
-                    304754, 473875, 1307628, 453315, 239905, 225935, 805089, 459824, 566755, 474451, 679532, 207180, 736544, 641674, 675365, 413539, 128479, 334174, 107115, 26306, 254647, 229635, 222200, 244866, 186218, 32104, 27336, 147424, 179721, 470195, 243858, 168974, 299417, 69923, 213105, 83044, 164693, 210198, 262894, 78677, 75253, 135771, 251956, 120651, 267635, 505383, 419211, 993194, 976232, 156383, 44936, 56229, 178080, 226798, 323046, 58435, 71790, 71404, 60435, 85175, 36112, 64429, 331019, 183441, 639818, 1140371, 403321, 461551, 128597, 543315, 365394, 2426136, 728484, 832166, 255473, 236944, 486748, 357104, 148553, 518193, 209709, 235940, 230247, 236971, 1044871, 123110, 357743, 223132, 590152, 218500, 214246, 202313, 235312, 547989, 246771, 358802, 332506, 284498, 282046, 206970, 366392, 68590, 119609, 68314, 217709, 23089, 16318, 32530, 1419125, 46699, 62853, 377983, 100033, 169597, 637510, 21208, 18553, 11921, 129709, 57465, 20439, 88863, 78505, 260439, 83932, 403531, 172893, 156616, 118390, 253224, 304653, 257838, 370742, 1097890, 639974, 542227, 56922, 120415, 27772, 205557, 854588, 315298, 31034, 190352, 226466, 295804, 249931, 34537, 95501, 441792, 128980, 742592, 862539, 997262, 712979, 709832, 641354, 504458, 1052672, 438369, 531232, 1286192, 784574, 802318, 938784, 517910, 575737, 223869, 1296245, 719281, 749775, 866444, 703023, 695956, 734141, 1154052, 799026, 731178, 662416, 536537, 326507, 335358, 254060, 837550, 124400, 264798, 146217, 230329, 17222, 13372, 88942, 434550, 688442, 376259, 333423, 610638, 421798, 340864, 347123, 228511, 176655, 565593, 690462, 151155, 241542, 76590, 56133, 52855, 399293, 570830, 738161, 1181151, 834933, 632937, 1096580, 2000471, 1027373, 1033329, 901330, 1260259, 1274980, 925432, 859734, 232408, 756933, 1279265, 1259675, 557457, 240841, 362390, 692003, 757381, 177439, 300391, 2723990, 1536684, 666744, 624561, 407305
-                    ],
-                    lineTension : 0,
-                    backgroundColor:[
-                        'rgba(0, 0, 0, 0)',
-                    ],
-                    borderWidth : 2,
-                    borderColor : 'cornflowerblue',
-                    hoverBorderWidth : 0,
-                    pointBackgroundColor : 'cornflowerblue',
-                }]
-            },
-            options : {
-                title : {
-                    display : true,
-                    text : 'Tx Volume on Deversifi',
-                    fontSize : 16,
-                    fontColor : 'cornflowerblue'
-                },
-                legend : {
-                    display : false,
-                    position : 'bottom'
-                },
-                tooltips : {
-                    enabled : true,
-                    mode : 'index',
-                    intersect : false,
-                    callbacks : {
-                        label: function(tooltipItem, data) {
-                            return data.datasets[tooltipItem.datasetIndex].label + ': $' + tooltipItem.yLabel.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-                        }
-                    }
-                },
-                layout : {
-                    padding : {
-                        left : 0,
-                        right : 0, 
-                        top : 0,
-                        bottom : 0
-                    }
-                },
-                elements : {
-                    point : {
-                        radius : 0
-                    }
-                },
-                scales: {
-                    yAxes : [{
-                        ticks : {
-                            callback : function(value, index, values){
-                                return '$' + value/1000000 + 'M';
-                            }
-                        }
-                    }],
-                    xAxes : [{
-                        ticks : {
-                            maxTicksLimit : 10 // The numbers of max x-axis gridlines
-                        }
-                    }]
-                },
-                watermark : {
-                    image : "/assets/icons/l2_watermark.png",
-                    x : 0,
-                    y : 0,
-                    width : 100,
-                    height : 100,
-                    opacity : 0.25,
-                    alignX : "middle",
-                    alignY : "middle",
-                    alignToChartArea : false,
-                    position : "back"
-                }
-
-            }
-        });
-
-
-
-
-
-        let lineChartidexTxVolume = new Chart(idexTxVolume, {
-            type : 'line',//pie, line, doughnut, polarArea
-            data : {
-                labels : dateSetTransactionVolume,
-                datasets : [{
-                    label : 'Tx Volume',
-                    data : [
-                        571207, 676589, 640788, 660687, 854998, 713868, 684181, 611459, 734880, 668903, 907377, 1054782, 1048976, 1288704, 1184373, 1232606, 1242843, 873495, 953100, 621619, 681364, 719715, 605364, 718953, 776995, 709933, 527227, 474404, 574512, 797417, 1264933, 1094683, 1030245, 939510, 862236, 795836, 752035, 583032, 815154, 873494, 542470, 433033, 522136, 414949, 357719, 490824, 573569, 373345, 322898, 308985, 394940, 325244, 430628, 379118, 481071, 299997, 356005, 393324, 452584, 482890, 658438, 670589, 429924, 531949, 695555, 535832, 546041, 583330, 388799, 360903, 369721, 481519, 665402, 629124, 619419, 746363, 711167, 666152, 710978, 710156, 1046332, 734227, 1051237, 1345076, 1064582, 968378, 1377937, 1208135, 993829, 903971, 861292, 985248, 822058, 1151188, 1170325, 1102053, 1163594, 1488302, 1305882, 1724111, 2030151, 2533716, 1527875, 2497815, 3387547, 3622999, 2319452, 2043529, 1449282, 1496881, 1803211, 1875056, 1567107, 1679643, 1389797, 1301646, 1402141, 1307461, 1076015, 1084840, 1115669, 942252, 1161895, 1036989, 1025364, 1103057, 2057845, 1090212, 1409179, 1812729, 1641177, 1395965, 1109678, 1139464, 1154675, 987979, 1063135, 988420, 1321078, 1156443, 1674807, 1217963, 1792996, 1581404, 1403429, 1559828, 1131408, 1394724, 1693231, 2115123, 1536255, 1762570, 1162312, 1006833, 1195266, 1326044, 1395290, 1092000, 1078149, 919201, 1148760, 1807703, 2123724, 1839028, 1525704, 2045586, 2209324, 2669048, 2750499, 2128206, 1884557, 2051481, 1839688, 2201260, 2056947, 1912287, 1386520, 1207541, 1169282, 1484108, 1592047, 1512017, 1374646, 1520373, 1548320, 1893832, 1621555, 2382455, 3071424, 3071424, 1975696, 1800689, 1864741, 2856261, 3437871, 1777231, 2219302, 2240167, 1714381, 1483456, 1632984, 2004347, 1062298, 1397133, 1222408, 1496567, 1710252, 1506572, 1689820, 2407324, 1522331, 1179997, 769814, 738141, 1166383, 1026907, 681356, 561538, 508864, 614608, 570861, 485254, 629665, 613758, 777947, 1053604, 695385, 665658, 677664, 762557, 574792, 585318, 485204, 428746, 599760, 426670, 497141, 879968, 335957, 454050, 575108, 567938, 405000, 386790, 248130, 293684, 303153, 265581, 290076, 399291, 909661, 318562, 228138, 313123, 306808, 242149, 349044, 179749, 182399, 314278, 287419, 94278, 98313, 153887, 99762, 329095, 405874, 399712, 280398, 244678, 209209, 235386, 48462, 78700, 177600, 56110, 170327, 2089397, 157767, 60398, 266293, 180353, 197343, 253982, 595583, 148096, 282055, 151325, 413592, 183433, 176692, 155087, 200895, 66999, 202531, 180034, 152489, 419773, 137387, 183096, 122522, 174513, 135394, 130444, 407885, 169975, 105446, 98973, 159126, 115413, 516551, 374483, 210852, 56644, 119385, 124699, 95409, 88943, 162393, 137886, 160793, 116950, 194701, 151711, 140482, 209552, 107276, 86962, 116731, 209338, 140784, 150491, 96558, 149217, 109703, 361934, 259041, 124490, 153307, 129821, 226141, 76857, 490309, 195634, 399363, 145062, 294714, 236710, 211379, 151918, 177183, 140892, 175918, 187705, 230650, 124387, 136122, 222888, 157980, 184627, 308689, 773753, 302994, 459961, 363546, 544975
-                    ],
-                    lineTension : 0,
-                    backgroundColor:[
-                        'rgba(0, 0, 0, 0)',
-                    ],
-                    borderWidth : 2,
-                    borderColor : 'cornflowerblue',
-                    hoverBorderWidth : 0,
-                    pointBackgroundColor : 'cornflowerblue',
-                }]
-            },
-            options : {
-                title : {
-                    display : true,
-                    text : 'Tx Volume on Idex',
-                    fontSize : 16,
-                    fontColor : 'cornflowerblue'
-                },
-                legend : {
-                    display : false,
-                    position : 'bottom'
-                },
-                tooltips : {
-                    enabled : true,
-                    mode : 'index',
-                    intersect : false,
-                    callbacks : {
-                        label: function(tooltipItem, data) {
-                            return data.datasets[tooltipItem.datasetIndex].label + ': $' + tooltipItem.yLabel.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-                        }
-                    }
-                },
-                layout : {
-                    padding : {
-                        left : 0,
-                        right : 0, 
-                        top : 0,
-                        bottom : 0
-                    }
-                },
-                elements : {
-                    point : {
-                        radius : 0
-                    }
-                },
-                scales: {
-                    yAxes : [{
-                        ticks : {
-                            callback : function(value, index, values){
-                                return '$' + value/1000000 + 'M';
-                            }
-                        }
-                    }],
-                    xAxes : [{
-                        ticks : {
-                            maxTicksLimit : 10 // The numbers of max x-axis gridlines
-                        }
-                    }]
-                },
-                watermark : {
-                    image : "/assets/icons/l2_watermark.png",
-                    x : 0,
-                    y : 0,
-                    width : 100,
-                    height : 100,
-                    opacity : 0.25,
-                    alignX : "middle",
-                    alignY : "middle",
-                    alignToChartArea : false,
-                    position : "back"
-                }
-
-            }
-        });
-
     </script>
 
+
+
+
+
+    <script>
+        //Dex//
+        Highcharts.getJSON('dex_sum.json', function (data) {
+            // Create the chart
+            Highcharts.setOptions({
+                lang: {
+                    thousandsSep: ','
+                }
+            })
+
+            Highcharts.stockChart('dex_sum', {
+                scrollbar:{
+                    enabled: false //bottom scrollbar
+                },
+                navigator: {
+                    enabled: false //bottom navigator
+                },
+                exporting: {
+                    enabled: false //top right exporting menu
+                },
+
+                rangeSelector: {
+                    buttons:[{
+                        type: 'month',
+                        count: 1,
+                        text: '1m',
+                        title: 'View 1 months'
+                    },{
+                        type: 'month',
+                        count: 3,
+                        text: '3m',
+                        title: 'View 3 months'
+                    },{
+                        type: 'month',
+                        count: 6,
+                        text: '6m',
+                        title: 'View 6 months'
+                    },{
+                        type: 'all',
+                        text: 'All',
+                        title: 'View all'
+                    }],
+                    selected: 1,
+                    inputEnabled: false // Edit Period
+                },
+                title: {
+                    text: 'Total Volume on Layer2 DEX'
+                },
+                tooltip:{
+                    valueDecimals: 0,
+                    valuePrefix: '$',
+                },
+                series: [{
+                    name: 'Vol',
+                    data: data
+
+                }]
+            
+            });
+        });
+
+        Highcharts.getJSON('dex_loopring_amm.json', function (data) {
+            // Create the chart
+            Highcharts.setOptions({
+                lang: {
+                    thousandsSep: ','
+                }
+            })
+
+            Highcharts.stockChart('dex_loopring_amm', {
+                scrollbar:{
+                    enabled: false //bottom scrollbar
+                },
+                navigator: {
+                    enabled: false //bottom navigator
+                },
+                exporting: {
+                    enabled: false //top right exporting menu
+                },
+
+                rangeSelector: {
+                    buttons:[{
+                        type: 'month',
+                        count: 1,
+                        text: '1m',
+                        title: 'View 1 months'
+                    },{
+                        type: 'month',
+                        count: 3,
+                        text: '3m',
+                        title: 'View 3 months'
+                    },{
+                        type: 'month',
+                        count: 6,
+                        text: '6m',
+                        title: 'View 6 months'
+                    },{
+                        type: 'all',
+                        text: 'All',
+                        title: 'View all'
+                    }],
+                    selected: 1,
+                    inputEnabled: false // Edit Period
+                },
+                title: {
+                    text: 'Volume on Loopring AMM'
+                },
+                tooltip:{
+                    valueDecimals: 0,
+                    valuePrefix: '$',
+                },
+                series: [{
+                    name: 'Vol',
+                    data: data
+
+                }]
+            
+            });
+        });
+
+        Highcharts.getJSON('dex_loopring.json', function (data) {
+            // Create the chart
+            Highcharts.setOptions({
+                lang: {
+                    thousandsSep: ','
+                }
+            })
+
+            Highcharts.stockChart('dex_loopring', {
+                scrollbar:{
+                    enabled: false //bottom scrollbar
+                },
+                navigator: {
+                    enabled: false //bottom navigator
+                },
+                exporting: {
+                    enabled: false //top right exporting menu
+                },
+
+                rangeSelector: {
+                    buttons:[{
+                        type: 'month',
+                        count: 1,
+                        text: '1m',
+                        title: 'View 1 months'
+                    },{
+                        type: 'month',
+                        count: 3,
+                        text: '3m',
+                        title: 'View 3 months'
+                    },{
+                        type: 'month',
+                        count: 6,
+                        text: '6m',
+                        title: 'View 6 months'
+                    },{
+                        type: 'all',
+                        text: 'All',
+                        title: 'View all'
+                    }],
+                    selected: 1,
+                    inputEnabled: false // Edit Period
+                },
+                title: {
+                    text: 'Volume on Loopring'
+                },
+                tooltip:{
+                    valueDecimals: 0,
+                    valuePrefix: '$',
+                },
+                series: [{
+                    name: 'Vol',
+                    data: data
+
+                }]
+            
+            });
+        });
+
+        Highcharts.getJSON('dex_deversifi.json', function (data) {
+            // Create the chart
+            Highcharts.setOptions({
+                lang: {
+                    thousandsSep: ','
+                }
+            })
+
+            Highcharts.stockChart('dex_deversifi', {
+                scrollbar:{
+                    enabled: false //bottom scrollbar
+                },
+                navigator: {
+                    enabled: false //bottom navigator
+                },
+                exporting: {
+                    enabled: false //top right exporting menu
+                },
+
+                rangeSelector: {
+                    buttons:[{
+                        type: 'month',
+                        count: 1,
+                        text: '1m',
+                        title: 'View 1 months'
+                    },{
+                        type: 'month',
+                        count: 3,
+                        text: '3m',
+                        title: 'View 3 months'
+                    },{
+                        type: 'month',
+                        count: 6,
+                        text: '6m',
+                        title: 'View 6 months'
+                    },{
+                        type: 'all',
+                        text: 'All',
+                        title: 'View all'
+                    }],
+                    selected: 1,
+                    inputEnabled: false // Edit Period
+                },
+                title: {
+                    text: 'Volume on Deversifi'
+                },
+                tooltip:{
+                    valueDecimals: 0,
+                    valuePrefix: '$',
+                },
+                series: [{
+                    name: 'Vol',
+                    data: data
+
+                }]
+            
+            });
+        });
+
+        Highcharts.getJSON('dex_nash.json', function (data) {
+            // Create the chart
+            Highcharts.setOptions({
+                lang: {
+                    thousandsSep: ','
+                }
+            })
+
+            Highcharts.stockChart('dex_nash', {
+                scrollbar:{
+                    enabled: false //bottom scrollbar
+                },
+                navigator: {
+                    enabled: false //bottom navigator
+                },
+                exporting: {
+                    enabled: false //top right exporting menu
+                },
+
+                rangeSelector: {
+                    buttons:[{
+                        type: 'month',
+                        count: 1,
+                        text: '1m',
+                        title: 'View 1 months'
+                    },{
+                        type: 'month',
+                        count: 3,
+                        text: '3m',
+                        title: 'View 3 months'
+                    },{
+                        type: 'month',
+                        count: 6,
+                        text: '6m',
+                        title: 'View 6 months'
+                    },{
+                        type: 'all',
+                        text: 'All',
+                        title: 'View all'
+                    }],
+                    selected: 1,
+                    inputEnabled: false // Edit Period
+                },
+                title: {
+                    text: 'Volume on Nash'
+                },
+                tooltip:{
+                    valueDecimals: 0,
+                    valuePrefix: '$',
+                },
+                series: [{
+                    name: 'Vol',
+                    data: data
+
+                }]
+            
+            });
+        });
+
+        Highcharts.getJSON('dex_idex.json', function (data) {
+            // Create the chart
+            Highcharts.setOptions({
+                lang: {
+                    thousandsSep: ','
+                }
+            })
+
+            Highcharts.stockChart('dex_idex', {
+                scrollbar:{
+                    enabled: false //bottom scrollbar
+                },
+                navigator: {
+                    enabled: false //bottom navigator
+                },
+                exporting: {
+                    enabled: false //top right exporting menu
+                },
+
+                rangeSelector: {
+                    buttons:[{
+                        type: 'month',
+                        count: 1,
+                        text: '1m',
+                        title: 'View 1 months'
+                    },{
+                        type: 'month',
+                        count: 3,
+                        text: '3m',
+                        title: 'View 3 months'
+                    },{
+                        type: 'month',
+                        count: 6,
+                        text: '6m',
+                        title: 'View 6 months'
+                    },{
+                        type: 'all',
+                        text: 'All',
+                        title: 'View all'
+                    }],
+                    selected: 1,
+                    inputEnabled: false // Edit Period
+                },
+                title: {
+                    text: 'Volume on IDEX'
+                },
+                tooltip:{
+                    valueDecimals: 0,
+                    valuePrefix: '$',
+                },
+                series: [{
+                    name: 'Vol',
+                    data: data
+
+                }]
+            
+            });
+        });
+
+        Highcharts.getJSON('dex_leverj.json', function (data) {
+            // Create the chart
+            Highcharts.setOptions({
+                lang: {
+                    thousandsSep: ','
+                }
+            })
+
+            Highcharts.stockChart('dex_leverj', {
+                scrollbar:{
+                    enabled: false //bottom scrollbar
+                },
+                navigator: {
+                    enabled: false //bottom navigator
+                },
+                exporting: {
+                    enabled: false //top right exporting menu
+                },
+
+                rangeSelector: {
+                    buttons:[{
+                        type: 'month',
+                        count: 1,
+                        text: '1m',
+                        title: 'View 1 months'
+                    },{
+                        type: 'month',
+                        count: 3,
+                        text: '3m',
+                        title: 'View 3 months'
+                    },{
+                        type: 'month',
+                        count: 6,
+                        text: '6m',
+                        title: 'View 6 months'
+                    },{
+                        type: 'all',
+                        text: 'All',
+                        title: 'View all'
+                    }],
+                    selected: 1,
+                    inputEnabled: false // Edit Period
+                },
+                title: {
+                    text: 'Volume on Leverj'
+                },
+                tooltip:{
+                    valueDecimals: 0,
+                    valuePrefix: '$',
+                },
+                series: [{
+                    name: 'Vol',
+                    data: data
+
+                }]
+            
+            });
+        });
+    </script>
 </body>
+
 </html>
